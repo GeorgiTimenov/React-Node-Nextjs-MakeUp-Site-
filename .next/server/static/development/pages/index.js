@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -824,12 +824,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-dates */ "react-dates");
 /* harmony import */ var react_dates__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_dates__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_day_picker_lib_style_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-day-picker/lib/style.css */ "./node_modules/react-day-picker/lib/style.css");
-/* harmony import */ var react_day_picker_lib_style_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_day_picker_lib_style_css__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "moment");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_day_picker_moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-day-picker/moment */ "react-day-picker/moment");
-/* harmony import */ var react_day_picker_moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_day_picker_moment__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_day_picker_lib_style_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-day-picker/lib/style.css */ "./node_modules/react-day-picker/lib/style.css");
+/* harmony import */ var react_day_picker_lib_style_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_day_picker_lib_style_css__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "moment");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_day_picker_moment__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-day-picker/moment */ "react-day-picker/moment");
+/* harmony import */ var react_day_picker_moment__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_day_picker_moment__WEBPACK_IMPORTED_MODULE_10__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -861,6 +863,7 @@ function _templateObject() {
 }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -1152,11 +1155,8 @@ function (_React$Component) {
           });
 
           _this.props.loadedQuote();
-          /* this.props.history.push({
-              pathname: `${this.props.submitRoute}`+res.data.body.shopify_id,
-              fromQuotePage: true          
-          }) */
 
+          next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("".concat(_this.props.submitRoute) + res.data.body.shopify_id);
         }).catch(function (err) {
           console.log(err);
         });
@@ -1431,10 +1431,10 @@ function (_React$Component) {
       var datePlaceholder = this.state.errors.eventDate ? this.state.errors.eventDateMsg : "event date";
 
       if (this.state.eventDate) {
-        datePlaceholder = Object(react_day_picker_moment__WEBPACK_IMPORTED_MODULE_9__["formatDate"])(this.state.eventDate, 'LL', 'en');
+        datePlaceholder = Object(react_day_picker_moment__WEBPACK_IMPORTED_MODULE_10__["formatDate"])(this.state.eventDate, 'LL', 'en');
       }
 
-      var today = moment__WEBPACK_IMPORTED_MODULE_8___default()().format('YYYY-MM-DD');
+      var today = moment__WEBPACK_IMPORTED_MODULE_9___default()().format('YYYY-MM-DD');
       this.state.serviceMap.set("nonbridal", [{
         value: "_makeup_and_hair_up",
         display: "makeup & hair up"
@@ -1677,7 +1677,7 @@ function (_React$Component) {
         displayFormat: "ddd MMM D YYYY",
         showClearDate: true,
         block: true
-      }, _defineProperty(_React$createElement2, "showClearDate", false), _defineProperty(_React$createElement2, "readOnly", true), _React$createElement2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, _defineProperty(_React$createElement2, "showClearDate", false), _defineProperty(_React$createElement2, "placeholder", "date"), _defineProperty(_React$createElement2, "readOnly", true), _React$createElement2))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "error-span"
       }, this.state.errors.eventDate ? this.state.errors.eventDateMsg : "")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Form__Item"
@@ -2317,6 +2317,9 @@ function (_React$Component) {
         name: "viewport",
         content: "width=device-width, initial-scale=1.0"
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/icon?family=Material+Icons"
+      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
         rel: "shortcut icon",
         href: "//cdn.shopify.com/s/files/1/1665/4771/files/favicon_flayr_mobile_makeupartists_and_hair_stylists_32x32.png?v=1536803770",
         type: "image/png"
@@ -2364,7 +2367,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
@@ -2428,6 +2431,17 @@ module.exports = require("next/head");
 /***/ (function(module, exports) {
 
 module.exports = require("next/link");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 

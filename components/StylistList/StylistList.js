@@ -1,5 +1,4 @@
 import React from 'react'; 
-import {withRouter} from 'react-router-dom';
 import axios from 'axios';
 import Loading from '../Loading/Loading';
 import ShopifyBar from '../ShopifyBar/ShopifyBar';
@@ -71,7 +70,7 @@ class StylistList extends React.Component {
 
       axios.post('https://express-server-ap-southeast-2.flayr.io/cancelquote', {
 
-        shopify_id: this.props.match.params.id
+        shopify_id: this.props.id
       })
       .then((response) => {
         let newQuote = this.state.quote
@@ -119,7 +118,7 @@ class StylistList extends React.Component {
     componentDidMount = () =>{
 
       //if direct quote is requested
-      if(this.props.match.path.toString().includes("stylist-quote")){
+/*       if(this.props.match.path.toString().includes("stylist-quote")){
         this.setState({
           isStylistQuote: true,
           stylistProviderId: this.props.match.params.provider_id
@@ -142,8 +141,8 @@ class StylistList extends React.Component {
           
         
         })
-      }
-      let _id = this.props.match.params.id;
+      } */
+      let _id = this.props.id;
 
 
 
@@ -327,7 +326,6 @@ class StylistList extends React.Component {
     
 
     render(){
-        document.body.style = 'background-color: #efefef;';
 
         let loadingText = <div class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h2">We're finding the best stylists in your area</div>
         let loading = <Loading  type="spin" color="black" height='10px' width='10px'/>
@@ -807,4 +805,4 @@ namespace = faqs_offers
     }
 }
 
-export default withRouter(StylistList);
+export default StylistList

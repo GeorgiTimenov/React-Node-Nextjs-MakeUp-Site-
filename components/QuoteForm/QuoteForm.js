@@ -5,7 +5,7 @@ import Script from 'react-load-script';
 import Geocode from "react-geocode";
 import styled from 'styled-components';
 import {SingleDatePicker} from 'react-dates';
-
+import Router from 'next/router'
 import 'react-day-picker/lib/style.css';
 import moment from 'moment';
 import MomentLocaleUtils, {
@@ -409,22 +409,18 @@ class QuoteForm extends React.Component{
         }
         
         axios.post(`https://express-server-ap-southeast-2.flayr.io/quotes`, quoteInfo)
-        .then(res => {
+          .then(res => {
 
 
-        this.setState({
-            isLoaded: true
+          this.setState({
+              isLoaded: true
+          })
+          this.props.loadedQuote();
+          Router.push(`${this.props.submitRoute}`+res.data.body.shopify_id);
         })
-        this.props.loadedQuote();
-
-        /* this.props.history.push({
-            pathname: `${this.props.submitRoute}`+res.data.body.shopify_id,
-            fromQuotePage: true          
-        }) */
-      })
-      .catch(err => {
-          console.log(err)
-      })
+        .catch(err => {
+            console.log(err)
+        })
 
         }
         
@@ -751,6 +747,7 @@ class QuoteForm extends React.Component{
                                     displayFormat="ddd MMM D YYYY"
                                     showClearDate block
                                     showClearDate={false}
+                                    placeholder="date"
                                     readOnly
                                     />
                             </Wrapper>

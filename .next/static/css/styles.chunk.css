@@ -1,4 +1,114 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300);
+
+.small-profile-pic{
+    border-top-left-radius: 100px; 
+    border-top-right-radius: 100px; 
+    border-bottom-right-radius: 100px; 
+    border-bottom-left-radius: 100px; 
+
+    height: 80%;
+    width: 80%;
+}
+
+.big-profile-pic{
+    object-fit: cover;
+  width: 350px;
+  height: 300px;
+}
+
+.spr-badge-caption{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 1300px){
+    .big-profile-pic{
+      
+          object-fit: cover;
+          width: 250px;
+          height: 200px;
+   
+    }
+}
+
+@media screen and (max-width: 400px){
+    .big-profile-pic{
+      
+          object-fit: cover;
+          width: 250px;
+          height: 180px;
+   
+    }
+}
+
+
+.show-location-link{
+    margin-left:65px;
+}
+
+.loading-bar{
+    width: 200px;
+    height: 200px;
+}
+
+.loading-text{
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+@media screen and (min-width: 1008px) {
+    .desktop-center{
+        text-align: center;
+    }
+}
+
+
+
+@media screen and (min-width: 1008px) {
+    .desktop-inner{
+        margin-left: -5%;
+        display: inline-block;
+    }
+ }
+
+
+.message-box{
+    text-align:center;
+    margin-top: 20px;
+}
+
+
+.message-item{
+    display: inline-block;
+}
+
+.faq-item{
+    font-size: 90%;
+    color: #6A6A6A;
+
+}
+
+.close-quote {
+    cursor: pointer
+}
+
+
+.profile-blurb-text{
+ position:absolute;
+ bottom:0;
+ left:0;
+ right:0;
+ height:40px;
+ background:linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0) 0%,
+                #F7F7F7 100%)
+}
 .widget{
     background-color: white;
     padding-top: 80px;
@@ -1720,9 +1830,6 @@ FLAYR CUSTOM START
   background-color: black;
 }
 
-body{
-  font-family: 'Montserrat', sans-serif;
-}
 .PresetDateRangePicker_panel {
   padding: 0 22px 11px
 }
@@ -2350,11 +2457,10 @@ body{
   font-size: 14px;
   line-height: 24px;
   color: #6A6A6A;
-  font-weight: 400;
-  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   background-color: #EFEFEF;
   width: 100%;
-  height: 40px;
+  height: 45px;
   padding: 11px 11px 9px;
   border-color: #CFCFCF;
   border: 0;
