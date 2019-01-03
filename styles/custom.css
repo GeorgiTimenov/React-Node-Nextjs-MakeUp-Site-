@@ -1,0 +1,484 @@
+/* 
+FLAYR CUSTOM START
+*/
+.ProductMeta__PriceList.Heading a .spr-badge .spr-badge-caption:after {
+    content:" - View All";
+  }
+  
+  .text-cycle {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  .alert-box {
+    margin-top: 20px;
+    color: #ff4d4d;
+  }
+  
+  #trialBooking {
+      display:none;
+    }
+    
+  .custom-select {
+    height: 54px;
+    width: 100%;
+    border: 1px solid #cfcfcf;
+    position:relative;
+  }
+  .custom-select:hover {
+    cursor: pointer;
+  }
+  
+  .custom-select select {
+    border: none;
+    background: none;
+    font-size: 16px;
+    height: 54px;
+    width: 100%;
+    padding: 15px;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;       /* remove default arrow */
+  }
+  
+  .custom-select svg {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+  }
+  
+  #shopify-product-reviews .spr-summary-starrating,
+  .spr-starrating .spr-summary-starrating,
+  .spr-summary-caption {
+    display: block  !important;
+  }
+  
+  /*  Removes write review  */
+  
+  .spr-summary-actions {
+    margin-top: 10px;
+  }
+  
+  .spr-summary-actions-newreview {
+    visibility: hidden;
+    display: none;
+  }
+  
+  .spr-summary-actions-togglereviews br + div {
+    display: none;
+    visibility: hidden;
+  }
+  
+  .ProductMeta {
+    text-align: left;
+  }
+  
+  .ProductMeta__PriceList.Heading {
+    margin-top: 0;
+  }
+  
+  .spr-badge {
+    font-size: 85%;
+  }
+  
+  .spr-icon {
+    color: #000000 !important;
+  }
+  
+  #shopify-product-reviews .spr-pagination {
+    display: block;
+  }
+  
+  .spr-pagination-prev {
+    display: none !important;
+  }
+    
+  .Rte a:not(.Button) {
+    text-decoration: none;
+  }
+  
+  #quotenotification {
+    background: #000000;
+    color: #ffffff;
+  }
+  
+  
+  #quotenotification-red {
+    background: #ff4d4d;
+    color: #ffffff;
+  }
+  
+  #quotenotification-green {
+    background: #8cf2d9 ;
+    color: #000000;
+  }
+  
+  
+  .quoteLine {
+    display: block;
+    overflow: hidden;
+  }
+  
+  .quoteLine + hr {
+    margin-top: 32px;
+  }
+  
+  .quoteLine .quotePerson {
+    display: inline-block;
+    font-weight: 700;
+    width: 200px;
+  }
+  
+  .quoteLine .quoteService {
+    display: inline-block;
+    font-weight: 400;
+    width: auto;
+  }
+  
+  hr {
+    border-top: 1px solid #cfcfcf;
+  }
+  
+  .CollectionMain_Offers {
+    margin-bottom: 20px;
+  }
+  
+  .offer-item {
+    /* margin-bottom: 6px; */
+    /* rm override - compensated for this margin in the Grid cell white */
+    /* border-bottom: 1px solid #DDDDDD; */
+    line-height: 1.3;
+  }
+  
+  .offer-stylist-photo {
+    padding-left: 0 !important;
+    margin-bottom: 0!important;
+  }
+  
+  .offer-stylist-details {
+    padding-left: 10px !important;
+    margin-bottom: 0!important;
+    text-align: left;
+  }
+  
+  .offer-stylist-details .ProductItem__Title.Heading {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+  
+  
+  .offer-feature-image {
+    position: relative;
+    /* margin-bottom: 10px; */
+    margin-bottom: 0px;
+  }
+  
+  .offer-feature-image-price {
+    display: inline-block;
+    font-size: 12px;
+    padding: 2px 6px;
+    background: #000000;
+    color: #ffffff;
+    position: absolute;
+    bottom: 1px;
+    right: 0;
+  }
+  
+  .offer-image-stylist-overlay {
+    background: rgba(255,255,255,.75);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 4px;
+    color: black;
+  }
+  
+  .offer-image-stylist-overlay .Grid {
+    margin: 0 !important;
+  }
+  
+  .ProductItem__Title {
+    margin-bottom: 0;
+  }
+  
+  .spr-badge-caption {
+    display: block;
+    color: black;
+  }
+  
+  
+  
+  /* 
+  FLAYR MEDIA QUERIES MIXINS
+  */
+  
+  /* SMALL ONLY */
+  @media only screen and (max-width: 749px) {
+    
+    .clients {
+        text-align: center;
+    }
+    
+    .clients img {
+      width: 55%;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+    
+    .in-progress {
+      text-align: center;
+    }
+    
+    .loader {
+      margin: 20px auto 20px auto;
+    }
+  
+    .ProductMeta__Description--inner {
+      padding: 0 24px;
+    }
+  
+    .quoteLine {
+      display: block;
+      overflow: hidden;
+    }
+  
+    .quoteLine .quotePerson {
+      width: 50%;
+      float: left;
+      clear: right;
+    }
+  
+    .quoteLine .quoteService {
+      width: 50%;
+      float: left;
+    }
+    
+    .Timeline__ListItem {
+        height: 450px;
+    }
+  
+  
+    .Container_Offers {
+      padding: 0 24px;
+    }
+  
+  }
+  
+  .Collapsible.Collapsible--large + #offers {
+    margin-top: 40px;
+  }
+  
+  /* MEDIUM UP */
+  @media only screen and (min-width: 750px) {
+    .ProductMeta__Description {
+      border-top: 0;
+    }
+  }
+  
+  @media only screen and (min-width: 1240px) {
+    .offer-image-stylist-overlay {
+      padding: 10px;
+    }
+    
+    .offer-stylist-details {
+      margin-top: 5%;
+    }
+  
+  }
+  
+  /* Get A Quote */
+    .getaquote {
+      background: black;
+        background-color: black;
+      color: white;
+    
+    }
+    
+    .getaquote .Section__Heading {
+        color: white;
+      
+    }
+    
+    .getaquote .Button {
+        color: #363636;
+      border-color: #ffffff;
+    }
+    
+    .getaquote .Button::before {
+      background-color: white;
+      color: #363636;
+    }
+  
+  
+  /* Override of styling for Makeup Artist Grid cards */
+  .subdued--heading {
+      text-transform: none;
+        letter-spacing: 0;
+        font-size: 0.8em
+  }
+  
+  
+  /* Shrink button spacing - mainly used for header */
+  .Button--compressed {
+      padding: 6px 7px;
+        letter-spacing: 0;
+        line-height: 1.5;
+    text-transform: none;
+  /*   	font-size: 0.6em */
+  }
+  
+  /* Shrink button spacing - mainly used for header */
+  .Button--thin {
+    padding: 6px 24px;
+}
+  
+  .Button--white{
+      background-color: white;
+  }
+  
+  
+  
+  .ArticleToolbar--red {
+      background: #ff4d4d;
+  }
+  
+  .Heading--white {
+      color: white;
+  }
+  
+  /* Extra Spacing for header */
+  @media only screen and (max-width: 1000px) {
+  .stylist-page-navbar-space {
+    margin-top: 8em;
+  }
+}
+
+/* RM - edit to make grid suit mobile layout for presenting stylist profile cards */
+.Grid {
+  margin-left: -12px;
+  margin-right: -12px;
+  overflow: hidden;
+}
+
+.Grid__Cell--12 {
+  padding-left: 0px; 
+}
+
+.Grid__Cell--TopPad5 {
+  padding-top: 4px; 
+}
+
+.Grid__Cell--white {
+  background-color: #ffffff7a;
+  margin-bottom: 6px;
+  padding-left: 12px;
+}
+
+.Offer__PricingCard {
+  padding-top: 0px;
+  font-size: 0.85rem;
+  color: black;
+  border-top: 0;
+  margin-top: 10px;
+  margin-right: 33px;
+}
+
+.ViewProfile--rightbottom{
+  /* font-size: 1.2rem; */
+  /* color: #757575; */
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  /* font-size: 1rem; */
+  /* border: none; */
+}
+
+.small-profile-pic-fixedheight {
+  /* border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px; */
+  border-radius: 50%;
+  height: 88px;
+  width: 88px;
+}
+
+.Alert__Booked {
+  color: #ff4d4d;
+}
+
+.Alert__Green{
+  color: #339999;
+  font-size: 0.8em;
+}
+
+.Alert__Stats{
+  color: #ff4d4d;
+  /* font-size: 0.8em; */
+  
+}
+
+.Alert__Stats--cycling{
+  animation:fading 5s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}
+}
+
+
+.material-icons {
+  font-size: inherit;
+}
+
+.Viewprofile__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #757575;
+  font-size: 2rem;
+  right: -5px;
+  /* font-weight: 200; */
+}
+
+.Card-bookedout {
+  opacity: 0.33;
+}
+
+.Label__Great-Value {
+  position: absolute;
+  left: 0px;
+  top: 2px;
+  text-align: left;
+}
+
+.Label__Great-Value--bottomright {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: #008489;
+  letter-spacing: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.reviewitem{
+  height:500px;
+}
+
+.review-container{
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 1%;
+  padding-right:1%;
+  font-size:22px;
+}
+
+.dotsClass{
+  background-color: black;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
