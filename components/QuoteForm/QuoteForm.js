@@ -44,7 +44,6 @@ class QuoteForm extends React.Component{
     constructor(){
         super();
         this.eventAddress = React.createRef();
-
         this.state = {
             isSuburbQuote: false,
             page1fields: ['autofill','state','postcode','suburb','eventDate','time','event_desc'],
@@ -415,8 +414,8 @@ class QuoteForm extends React.Component{
           this.setState({
               isLoaded: true
           })
-          this.props.loadedQuote();
-          Router.push(`${this.props.submitRoute}`+res.data.body.shopify_id);
+          //this.props.loadedQuote();
+          Router.push(`${this.props.submitRoute}`+ '?id='+res.data.body.shopify_id);
         })
         .catch(err => {
             console.log(err)

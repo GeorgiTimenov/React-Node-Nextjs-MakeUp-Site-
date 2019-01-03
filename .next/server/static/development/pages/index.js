@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -614,7 +614,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         class: "SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1"
       }, "Book Pro Makeup Artists & hair stylists"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_QuoteForm_QuoteForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        submitRoute: "/quote/",
+        submitRoute: "/quote",
         loadedQuote: this.onLoadedHandler,
         hideForm: this.onFormHideHandler
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InstaFeed_InstaFeed__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ReviewsBox_ReviewsBox__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_JoinBar_JoinBar__WEBPACK_IMPORTED_MODULE_12__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NeedHelpBar_NeedHelpBar__WEBPACK_IMPORTED_MODULE_10__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GetStartedBar_GetStartedBar__WEBPACK_IMPORTED_MODULE_11__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null));
@@ -1152,11 +1152,10 @@ function (_React$Component) {
         axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("https://express-server-ap-southeast-2.flayr.io/quotes", quoteInfo).then(function (res) {
           _this.setState({
             isLoaded: true
-          });
+          }); //this.props.loadedQuote();
 
-          _this.props.loadedQuote();
 
-          next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("".concat(_this.props.submitRoute) + res.data.body.shopify_id);
+          next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("".concat(_this.props.submitRoute) + '?id=' + res.data.body.shopify_id);
         }).catch(function (err) {
           console.log(err);
         });
@@ -2367,7 +2366,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

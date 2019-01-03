@@ -9,10 +9,9 @@ app.prepare()
 .then(() => {
   const server = express()
 
-  server.get('/quote/:id', (req, res) => {
-    return app.render(req, res, '/quote/', { id: req.params.id })
-  })
-
+   server.get('/quote/:id', (req, res) => {
+    return app.render(req, res, '/quote', { id: req.params.id })
+  }) 
 
   server.get('*', (req, res) => {
     return handle(req, res)
