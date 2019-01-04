@@ -106,41 +106,7 @@ var Footer = function Footer() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://au.flayr.io/account",
     class: "Link Link--primary footer-link"
-  }, "My Account")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    class: "Footer__Block Footer__Block--newsletter"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    class: "Footer__Title Heading u-h6"
-  }, "Newsletter"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    class: "Footer__Content Rte"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Subscribe to receive updates, access to exclusive deals, and more. We only post once a month.")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    method: "post",
-    action: "https://au.flayr.io/contact#footer-newsletter",
-    id: "footer-newsletter",
-    "accept-charset": "UTF-8",
-    class: "Footer__Newsletter Form"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "hidden",
-    name: "form_type",
-    value: "customer"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "hidden",
-    name: "utf8",
-    value: "\u2713"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "hidden",
-    name: "contact[tags]",
-    value: "newsletter"
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    type: "email",
-    name: "contact[email]",
-    class: "Form__Input",
-    "aria-label": "Enter your email address",
-    placeholder: "Enter your email address",
-    required: ""
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    type: "submit",
-    class: "Form__Submit Button Button--primary"
-  }, "Subscribe")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "My Account"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "Footer__Aside"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "Footer__Copyright"
@@ -499,7 +465,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         class: "SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1"
       }, "Book Pro Makeup Artists & hair stylists"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_QuoteForm_QuoteForm__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        submitRoute: "/quote",
+        submitRoute: "/quote/",
         loadedQuote: this.onLoadedHandler,
         hideForm: this.onFormHideHandler
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_InstaFeed_InstaFeed__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ReviewsBox_ReviewsBox__WEBPACK_IMPORTED_MODULE_8__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_JoinBar_JoinBar__WEBPACK_IMPORTED_MODULE_12__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NeedHelpBar_NeedHelpBar__WEBPACK_IMPORTED_MODULE_10__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GetStartedBar_GetStartedBar__WEBPACK_IMPORTED_MODULE_11__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Footer_Footer__WEBPACK_IMPORTED_MODULE_6__["default"], null));
@@ -1028,7 +994,7 @@ function (_React$Component) {
           }); //this.props.loadedQuote();
 
 
-          next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("".concat(_this.props.submitRoute) + '?id=' + res.data.body.shopify_id);
+          next_router__WEBPACK_IMPORTED_MODULE_7___default.a.push("".concat(_this.props.submitRoute) + res.data.body.shopify_id);
         }).catch(function (err) {
           console.log(err);
         });
@@ -1899,9 +1865,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ReviewsBox = function ReviewsBox() {
+var ReviewsBox = function ReviewsBox(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "outer-container"
+    className: "outer-container",
+    style: props.style
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "inner-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {

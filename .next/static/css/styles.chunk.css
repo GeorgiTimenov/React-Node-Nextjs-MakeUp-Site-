@@ -1,114 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300);
-
-.small-profile-pic{
-    border-top-left-radius: 100px; 
-    border-top-right-radius: 100px; 
-    border-bottom-right-radius: 100px; 
-    border-bottom-left-radius: 100px; 
-
-    height: 80%;
-    width: 80%;
-}
-
-.big-profile-pic{
-    object-fit: cover;
-  width: 350px;
-  height: 300px;
-}
-
-.spr-badge-caption{
-    width: 100%;
-    height: 100%;
-}
-
-@media screen and (max-width: 1300px){
-    .big-profile-pic{
-      
-          object-fit: cover;
-          width: 250px;
-          height: 200px;
-   
-    }
-}
-
-@media screen and (max-width: 400px){
-    .big-profile-pic{
-      
-          object-fit: cover;
-          width: 250px;
-          height: 180px;
-   
-    }
-}
-
-
-.show-location-link{
-    margin-left:65px;
-}
-
-.loading-bar{
-    width: 200px;
-    height: 200px;
-}
-
-.loading-text{
-    padding-top: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
-
-    width: 50%;
-    margin: 0 auto;
-}
-
-
-@media screen and (min-width: 1008px) {
-    .desktop-center{
-        text-align: center;
-    }
-}
-
-
-
-@media screen and (min-width: 1008px) {
-    .desktop-inner{
-        margin-left: -5%;
-        display: inline-block;
-    }
- }
-
-
-.message-box{
-    text-align:center;
-    margin-top: 20px;
-}
-
-
-.message-item{
-    display: inline-block;
-}
-
-.faq-item{
-    font-size: 90%;
-    color: #6A6A6A;
-
-}
-
-.close-quote {
-    cursor: pointer
-}
-
-
-.profile-blurb-text{
- position:absolute;
- bottom:0;
- left:0;
- right:0;
- height:40px;
- background:linear-gradient(
-                180deg,
-                rgba(255, 255, 255, 0) 0%,
-                #F7F7F7 100%)
-}
 .widget{
     background-color: white;
     padding-top: 80px;
@@ -1829,7 +1719,304 @@ FLAYR CUSTOM START
 .dotsClass{
   background-color: black;
 }
+.form-box {
+  padding: 40px;
+  background-color:rgba(239,239,239);
+  width: 30%;
+  margin-left: 10%;
+}
 
+.footer-link{
+  color: #6c757d;
+}
+
+@media screen and (max-width: 2500px) {
+  .form-box {
+      padding: 40px;
+      background-color:rgba(239,239,239);
+      width: 35%;
+      margin-left: 7%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .form-box {
+      padding: 40px;
+      background-color:rgba(239,239,239);
+      width: 60%;
+      margin-left: 0;
+
+  }
+}
+
+
+@media screen and (max-width: 1020px) {
+  .form-box {
+      padding: 40px;
+      background-color:rgba(239,239,239);
+      width: 90%;
+      margin-left: 0;
+
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .form-box {
+      padding: 40px;
+      background-color:rgba(239,239,239);
+      width: 80%;
+      margin-left: 0;
+
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form-box {
+      padding: 40px;
+      background-color:rgba(239,239,239);
+      width: 100%;
+      margin-left: 0;
+  }
+}
+
+.form-background {
+  background-image: url('https://cdn.shopify.com/s/files/1/1665/4771/files/mobile_makeup_and_hair.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 80px;
+}
+
+@media screen and (max-width: 600px) {
+  .form-background {
+      background-image: none;
+      padding: 0px;
+     
+  }
+}
+
+
+.button-form{
+  margin-right: 20px;
+
+}
+
+.sub-option{
+  margin-left: 10px;
+}
+
+.form-container{
+  margin-top: 30px;
+}
+
+
+.form-field-error{
+  border-color:#CB444A;
+}
+
+.loading-bar{
+  padding-top: 50px;
+  width: 200px;
+  height: 200px;
+  display:block;
+}
+
+.loading-text{
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  width: 50%;
+  margin: 0 auto;
+}
+
+.prev-div {
+  z-index: 0;
+  cursor: pointer;
+}
+
+.pac-container {
+  background-color:#EFEFEF;
+}
+
+
+.pac-item{
+  padding: 5px;
+}
+
+.Button--primary{
+  z-index: 0;
+}
+
+.date-input{
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+
+}
+
+
+
+
+.error-span{
+  color: #CB444A;
+}
+
+.info-box {
+  font-size: 80%;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.info-box-hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.outer-container{
+  padding-top: 40px;
+  padding-bottom: 5px;
+
+  text-align: center;
+}
+
+
+.inner-container{
+  padding: 50px;
+  font-size:22px;
+  display: inline-block;
+}
+
+
+.small-profile-pic{
+  border-top-left-radius: 100px; 
+  border-top-right-radius: 100px; 
+  border-bottom-right-radius: 100px; 
+  border-bottom-left-radius: 100px; 
+
+  height: 80%;
+  width: 80%;
+}
+
+.big-profile-pic{
+  object-fit: cover;
+width: 350px;
+height: 300px;
+}
+
+.spr-badge-caption{
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1300px){
+  .big-profile-pic{
+    
+        object-fit: cover;
+        width: 250px;
+        height: 200px;
+ 
+  }
+}
+
+@media screen and (max-width: 400px){
+  .big-profile-pic{
+    
+        object-fit: cover;
+        width: 250px;
+        height: 180px;
+ 
+  }
+}
+
+
+.show-location-link{
+  margin-left:65px;
+}
+
+.loading-bar{
+  width: 200px;
+  height: 200px;
+}
+
+.loading-text{
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+@media screen and (min-width: 1008px) {
+  .desktop-center{
+      text-align: center;
+  }
+}
+
+
+
+@media screen and (min-width: 1008px) {
+  .desktop-inner{
+      margin-left: -5%;
+      display: inline-block;
+  }
+}
+
+
+.message-box{
+  text-align:center;
+  margin-top: 20px;
+}
+
+
+.message-item{
+  display: inline-block;
+}
+
+.faq-item{
+  font-size: 90%;
+  color: #6A6A6A;
+
+}
+
+.close-quote {
+  cursor: pointer
+}
+
+
+.profile-blurb-text{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+height:40px;
+background:linear-gradient(
+              180deg,
+              rgba(255, 255, 255, 0) 0%,
+              #F7F7F7 100%)
+}
+
+.profile-box{
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.profile-pic{
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+.profile-image-box{
+margin-left: 10px;
+}
+
+.reviews-data-box{
+  margin-top: 5px;
+  margin-left: 20px;
+  flex: 1;
+}
 .PresetDateRangePicker_panel {
   padding: 0 22px 11px
 }

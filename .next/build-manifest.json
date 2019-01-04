@@ -11,10 +11,12 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/quote": [
+    "/join": [
       "static/runtime/webpack.js",
-      "static/css/styles.chunk.css",
-      "static/chunks/styles.js",
+      "static/runtime/main.js"
+    ],
+    "/account": [
+      "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/index": [

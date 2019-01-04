@@ -1,9 +1,9 @@
 import React from 'react'; 
 import './ReviewsBox.css';
 
-const ReviewsBox = () => {
+const ReviewsBox = (props) => {
     return(
-        <div className="outer-container">
+        <div className="outer-container" style={props.style}>
 
            <div className="inner-container">
            <h2 class="SectionHeader__Heading Heading u-h1">

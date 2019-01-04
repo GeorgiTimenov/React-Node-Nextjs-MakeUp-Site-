@@ -87,12 +87,13 @@ return(
                         <div class="Grid__Cell Grid__Cell--12 1/3--phone 1/3--tablet-and-up offer-item">
                         <div class="offer-feature-image offer-feature-image-nomargin">
 
-                              <img class="ProductItem__Image Image--fadeIn Image--lazyLoaded" src={`${props.bigImage}`} className="big-profile-pic" alt="#bridal"></img>
+                              <img class="big-profile-pic ProductItem__Image Image--fadeIn Image--lazyLoaded" src={`${props.bigImage}`} className="big-profile-pic ProductItem__Image Image--fadeIn Image--lazyLoaded" alt="#bridal"></img>
                               <span class="Image__Loader"></span>
-
+                      {!props.forLandingPage &&
                               <div class="ProductItem__Info ProductItem__Info--center offer-image-stylist-overlay">
                                     <span>View Photos</span>
                               </div>
+                      }
                         </div>
                         </div>
 

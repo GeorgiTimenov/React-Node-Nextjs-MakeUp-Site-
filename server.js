@@ -9,6 +9,16 @@ app.prepare()
 .then(() => {
   const server = express()
 
+
+  server.get('/:country/:state/:suburb/MakeupArtists', (req, res) => {
+    return app.render(req, res, '/MakeupArtists', { country: req.params.country, state: req.params.state, suburb: req.params.suburb })
+  }) 
+
+  server.get('/:country/:state/:suburb/MakeupArtist', (req, res) => {
+    return app.render(req, res, '/MakeupArtists', { country: req.params.country, state: req.params.state, suburb: req.params.suburb })
+  }) 
+
+
    server.get('/quote/:id', (req, res) => {
     return app.render(req, res, '/quote', { id: req.params.id })
   }) 

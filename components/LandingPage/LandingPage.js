@@ -67,7 +67,7 @@ class LandingPage extends React.Component{
                  <div className="form-box">
                  <h3 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">Book Pro Makeup Artists &amp; hair stylists</h3>
  
-                     <QuoteForm submitRoute="/quote" loadedQuote={this.onLoadedHandler} hideForm={this.onFormHideHandler}/>
+                     <QuoteForm submitRoute="/quote/" loadedQuote={this.onLoadedHandler} hideForm={this.onFormHideHandler}/>
                  </div>
                 </div>
             }

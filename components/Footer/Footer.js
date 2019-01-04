@@ -62,18 +62,7 @@ const Footer = () => {
         
         
         
-        <div class="Footer__Block Footer__Block--newsletter">
-        
-          <h2 class="Footer__Title Heading u-h6">Newsletter</h2>
-        
-        
-        
-          <div class="Footer__Content Rte">
-            <p>Subscribe to receive updates, access to exclusive deals, and more. We only post once a month.</p>
-          </div><form method="post" action="https://au.flayr.io/contact#footer-newsletter" id="footer-newsletter" accept-charset="UTF-8" class="Footer__Newsletter Form"><input type="hidden" name="form_type" value="customer"/><input type="hidden" name="utf8" value="✓"/><input type="hidden" name="contact[tags]" value="newsletter"/>
-          <input type="email" name="contact[email]" class="Form__Input" aria-label="Enter your email address" placeholder="Enter your email address" required=""/>
-          <button type="submit" class="Form__Submit Button Button--primary">Subscribe</button></form></div>
-        
+       
                 
                 
                 

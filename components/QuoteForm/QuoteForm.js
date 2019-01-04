@@ -12,7 +12,6 @@ import MomentLocaleUtils, {
     formatDate,
     parseDate,
   } from 'react-day-picker/moment';
-  
 
 Geocode.setApiKey("AIzaSyBvDA0hOnuN-KijkcT9IFYapOH9042QSso");
 
@@ -34,9 +33,6 @@ const Wrapper = styled.div`
     background-color: #EFEFEF;
     
   }
-
-    
-  
 `;
 
 
@@ -415,7 +411,7 @@ class QuoteForm extends React.Component{
               isLoaded: true
           })
           //this.props.loadedQuote();
-          Router.push(`${this.props.submitRoute}`+ '?id='+res.data.body.shopify_id);
+          Router.push(`${this.props.submitRoute}`+ res.data.body.shopify_id);
         })
         .catch(err => {
             console.log(err)
