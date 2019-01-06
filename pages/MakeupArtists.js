@@ -9,12 +9,8 @@ import fetch from 'isomorphic-unfetch';
 
 
 export default class extends Component {
-
-
- 
-  
    static async getInitialProps ({query}) {
-
+     
     const latRes = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query.suburb},${query.state},Australia&key=AIzaSyC5FYbQBRtJPiygtIbE7Z5_XEySg5ujwoM`)
     const data1 = await latRes.json()
     let latLng = data1.results[0].geometry.location;
@@ -27,7 +23,6 @@ export default class extends Component {
           postcode = a.short_name;
       }
     }
-
     let compare = (a,b) => {
       if (a.num_of_reviews < b.num_of_reviews)
         return 1;
@@ -48,18 +43,20 @@ export default class extends Component {
       finalSuburb = finalSuburb.replace('-', ' ');
     }
 
-    return { state: query.state, country: query.country, suburb: finalSuburb, stylists: stylistArray.splice(0,10)}
+    return { state: query.state, country: query.country, suburb: this.toTitleCase(finalSuburb), stylists: stylistArray.splice(0,10)}
+  }
+
+   static toTitleCase = (str) => {
+    return str.replace(/\w\S*/g, function(txt){
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
   }
 
   render () {
     return (
       <div>
         <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/1665/4771/files/favicon_flayr_mobile_makeupartists_and_hair_stylists_32x32.png?v=1536803770" type="image/png" />
-        <link rel="stylesheet" href="../styles/custom.css" />
-        <title>{this.props.suburb} | Mobile Makeup Artists & Hair Stylists</title>
+        <title>Makeup Artists & Hair Stylists In {this.props.suburb}</title>
         </Head>
         <SuburbLandingPage suburb={this.props.suburb} state={this.props.state} stylists={this.props.stylists}/>
       </div>

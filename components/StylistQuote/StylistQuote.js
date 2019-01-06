@@ -44,7 +44,7 @@ class StylistQuote extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('https://express-server-ap-southeast-2.flayr.io/stylist/'+this.props.match.params.provider_id)
+        axios.get('https://express-server-ap-southeast-2.flayr.io/stylist/'+this.props.provider_id)
         .then((response) => {
 
             if(!response.data.body.isActive){
@@ -111,8 +111,6 @@ class StylistQuote extends React.Component {
                 
                 style={{background: 'white'}}>Check for other stylists</a> 
             </div></center>
-       
-        document.body.style = 'background-color: #efefef;';
 
         return(
         <div>
@@ -160,7 +158,7 @@ class StylistQuote extends React.Component {
 
                 <h3 className="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">Get a quote from {this.state.stylistName}</h3>
 
-                    <QuoteForm submitRoute={`/stylist-quote/${this.props.match.params.provider_id}/`} loadedQuote={this.onLoadedHandler} hideForm={this.onFormHideHandler}/>
+                    <QuoteForm submitRoute={`/stylist-quote/${this.props.provider_id}/`} loadedQuote={this.onLoadedHandler} hideForm={this.onFormHideHandler}/>
                 </div>
             </div>
                  </div>

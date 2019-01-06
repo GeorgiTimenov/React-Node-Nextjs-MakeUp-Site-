@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -819,7 +819,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  .SingleDatePickerInput {\n    background-color: #EFEFEF\n\n  }\n  .DateInput_input{\n    font-size: 13px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    background-color: #EFEFEF\n  }\n  .DateInput_input_1{\n    font-size: 13px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    background-color: #EFEFEF;\n    \n  }\n\n    \n  \n"]);
+  var data = _taggedTemplateLiteral(["\n  .SingleDatePickerInput {\n    background-color: #EFEFEF\n\n  }\n  .DateInput_input{\n    font-size: 13px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    background-color: #EFEFEF\n  }\n  .DateInput_input_1{\n    font-size: 13px;\n    padding-top: 10px;\n    padding-bottom: 10px;\n    background-color: #EFEFEF;\n    \n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -2279,17 +2279,7 @@ function (_React$Component) {
   _createClass(Index, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1.0"
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/icon?family=Material+Icons"
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("link", {
-        rel: "shortcut icon",
-        href: "//cdn.shopify.com/s/files/1/1665/4771/files/favicon_flayr_mobile_makeupartists_and_hair_stylists_32x32.png?v=1536803770",
-        type: "image/png"
-      }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("title", null, "FLAYR | Mobile Makeup Artists & Hair Stylists")), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_LandingPage_LandingPage__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_LandingPage_LandingPage__WEBPACK_IMPORTED_MODULE_3__["default"], null));
     }
   }]);
 
@@ -2333,7 +2323,7 @@ function (_React$Component) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

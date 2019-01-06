@@ -1,15 +1,21 @@
 {
-  "./noop": [
+  "./InstaFeed.css": [
     {
-      "id": "./node_modules/next/dist/client/noop.js",
-      "name": "./node_modules/next/dist/client/noop.js",
-      "file": "static/chunks/0.js",
-      "publicPath": "static/chunks/0.js"
+      "id": "./components/InstaFeed/InstaFeed.css",
+      "name": "./components/InstaFeed/InstaFeed.css",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
     }
   ],
   "undefined": [
     {
       "id": 4,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 5,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
@@ -21,19 +27,7 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 7,
-      "name": null,
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    },
-    {
       "id": 8,
-      "name": null,
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    },
-    {
-      "id": 5,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
@@ -63,22 +57,32 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 13,
+      "id": 14,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 14,
+      "id": 15,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "./InstaFeed.css": [
+    },
     {
-      "id": "./components/InstaFeed/InstaFeed.css",
-      "name": "./components/InstaFeed/InstaFeed.css",
+      "id": 16,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 17,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 18,
+      "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
@@ -91,18 +95,10 @@
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "react-dates/lib/css/_datepicker.css": [
+  "./ReviewsBox.css": [
     {
-      "id": "./node_modules/react-dates/lib/css/_datepicker.css",
-      "name": "./node_modules/react-dates/lib/css/_datepicker.css",
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "../styles/shopify.css": [
-    {
-      "id": "./styles/shopify.css",
-      "name": "./styles/shopify.css",
+      "id": "./components/ReviewsBox/ReviewsBox.css",
+      "name": "./components/ReviewsBox/ReviewsBox.css",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
@@ -115,18 +111,26 @@
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "../styles/custom.css": [
+  "./StylistQuote.css": [
     {
-      "id": "./styles/custom.css",
-      "name": "./styles/custom.css",
+      "id": "./components/StylistQuote/StylistQuote.css",
+      "name": "./components/StylistQuote/StylistQuote.css",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./QuoteForm.css": [
+  "./ReviewBox.css": [
     {
-      "id": "./components/QuoteForm/QuoteForm.css",
-      "name": "./components/QuoteForm/QuoteForm.css",
+      "id": "./components/ReviewBox/ReviewBox.css",
+      "name": "./components/ReviewBox/ReviewBox.css",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "../StylistList/StylistList.css": [
+    {
+      "id": "./components/StylistList/StylistList.css",
+      "name": "./components/StylistList/StylistList.css",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
@@ -139,20 +143,44 @@
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./ReviewsBox.css": [
+  "./QuoteForm.css": [
     {
-      "id": "./components/ReviewsBox/ReviewsBox.css",
-      "name": "./components/ReviewsBox/ReviewsBox.css",
+      "id": "./components/QuoteForm/QuoteForm.css",
+      "name": "./components/QuoteForm/QuoteForm.css",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./ReviewBox.css": [
+  "../styles/shopify.css": [
     {
-      "id": "./components/ReviewBox/ReviewBox.css",
-      "name": "./components/ReviewBox/ReviewBox.css",
+      "id": "./styles/shopify.css",
+      "name": "./styles/shopify.css",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "../styles/custom.css": [
+    {
+      "id": "./styles/custom.css",
+      "name": "./styles/custom.css",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "react-dates/lib/css/_datepicker.css": [
+    {
+      "id": "./node_modules/react-dates/lib/css/_datepicker.css",
+      "name": "./node_modules/react-dates/lib/css/_datepicker.css",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./noop": [
+    {
+      "id": "./node_modules/next/dist/client/noop.js",
+      "name": "./node_modules/next/dist/client/noop.js",
+      "file": "static/chunks/0.js",
+      "publicPath": "static/chunks/0.js"
     }
   ]
 }

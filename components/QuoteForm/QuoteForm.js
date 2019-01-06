@@ -500,8 +500,6 @@ class QuoteForm extends React.Component{
                 this.setState({errors: errorsObj});
         }
         }
-        
-        
     }
 
 

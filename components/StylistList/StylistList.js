@@ -118,14 +118,14 @@ class StylistList extends React.Component {
     componentDidMount = () =>{
 
       //if direct quote is requested
-/*       if(this.props.match.path.toString().includes("stylist-quote")){
+       if(this.props.isStylistQuote){
         this.setState({
           isStylistQuote: true,
-          stylistProviderId: this.props.match.params.provider_id
+          stylistProviderId: this.props.provider_id
 
         }, ()=>{
           
-          axios.get('https://express-server-ap-southeast-2.flayr.io/stylist/'+this.props.match.params.provider_id)
+          axios.get('https://express-server-ap-southeast-2.flayr.io/stylist/'+this.props.provider_id)
           .then((response) => {
             this.setState({
               requestedSylistName: response.data.body.first_name
@@ -138,10 +138,8 @@ class StylistList extends React.Component {
               badRequest: true
             })
           })
-          
-        
         })
-      } */
+      }
       let _id = this.props.id;
 
 
