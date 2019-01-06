@@ -302,27 +302,6 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-.profile-box{
-  margin-bottom: 30px;
-  display: flex;
-}
-
-.profile-pic{
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-}
-
-
-.profile-image-box{
-margin-left: 10px;
-}
-
-.reviews-data-box{
-  margin-top: 5px;
-  margin-left: 20px;
-  flex: 1;
-}
 .widget{
     background-color: white;
     padding-top: 80px;
