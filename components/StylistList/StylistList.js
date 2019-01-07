@@ -431,6 +431,7 @@ class StylistList extends React.Component {
                      event_time={this.state.quote.event_time}
                      requests_past_day={s.requests_past_day}
                      defaultCost={this.state.defaultCost}
+                     provider_id={s.provider_id}
                      />
                 )
             }
@@ -456,7 +457,7 @@ class StylistList extends React.Component {
                   event_time={this.state.quote.event_time}
                   defaultCost={this.state.defaultCost}
                   requests_past_day={s.requests_past_day}
-
+                  provider_id={s.provider_id}
                   />)
               }else{
                 //all other ones
@@ -478,6 +479,7 @@ class StylistList extends React.Component {
                        requests_past_day={s.requests_past_day}
                        event_time={this.state.quote.event_time}
                        defaultCost={this.state.defaultCost}
+                       provider_id={s.provider_id}
                        />
                 )
               }
