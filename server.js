@@ -9,17 +9,36 @@ app.prepare()
 .then(() => {
   const server = express()
 
+  server.get('/account', (req,res)=>{
+    return app.render(req,res, '/account')
+  })
+
+  server.get('/join', (req, res) => {
+    return app.render(req, res, `/join`)
+  })
+
   server.get('/:provider_id/get-quote', (req, res) => {
     return app.render(req, res, '/get-quote', { provider_id: req.params.provider_id})
   }) 
-
   server.get('/profile/:id', (req, res) => {
     return app.render(req, res, '/profile', { id: req.params.id })
   }) 
 
-  server.get('/:country/:state/:suburb/MakeupArtists', (req, res) => {
+  server.get('/au/:state', (req, res) => {
+    return app.render(req, res, `/au/state`, {state: req.params.state, country: 'au'})
+  }) 
+
+  server.get('/au/', (req, res) => {
+    return app.render(req, res, `/au`)
+  }) 
+
+  server.get('/:country/:state/:suburb/', (req, res) => {
     return app.render(req, res, '/MakeupArtists', { country: req.params.country, state: req.params.state, suburb: req.params.suburb })
   }) 
+
+  server.get('/:country/:state/:suburb/MakeupArtists', (req, res) => {
+    return app.render(req, res, '/MakeupArtists', { country: req.params.country, state: req.params.state, suburb: req.params.suburb })
+  })
 
   server.get('/:country/:state/:suburb/MakeupArtist', (req, res) => {
     return app.render(req, res, '/MakeupArtists', { country: req.params.country, state: req.params.state, suburb: req.params.suburb })
