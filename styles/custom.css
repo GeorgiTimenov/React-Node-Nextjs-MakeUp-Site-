@@ -480,9 +480,14 @@ FLAYR CUSTOM START
 }
 .form-box {
   padding: 40px;
-  background-color:rgba(239,239,239);
   width: 30%;
   margin-left: 10%;
+  background-color: white;
+  border-color: linear-gradient(#25a9e0, #1b75bb,#2e3191, #7f3f97);
+  border-image: linear-gradient(0.25turn, #25a9e0, #1b75bb,#2e3191, #7f3f97) 60;
+  border-style: solid;
+  border-width: 5px;  background-repeat: no-repeat;
+  
 }
 
 .footer-link{
@@ -492,18 +497,20 @@ FLAYR CUSTOM START
 @media screen and (max-width: 2500px) {
   .form-box {
       padding: 40px;
-      background-color:rgba(239,239,239);
       width: 35%;
       margin-left: 7%;
+      background-color: white;
+    
   }
 }
 
 @media screen and (max-width: 1400px) {
   .form-box {
       padding: 40px;
-      background-color:rgba(239,239,239);
       width: 60%;
       margin-left: 0;
+      background-color: white;
+      
 
   }
 }
@@ -512,9 +519,10 @@ FLAYR CUSTOM START
 @media screen and (max-width: 1020px) {
   .form-box {
       padding: 40px;
-      background-color:rgba(239,239,239);
       width: 90%;
       margin-left: 0;
+      background-color: white;
+     
 
   }
 }
@@ -522,25 +530,28 @@ FLAYR CUSTOM START
 @media screen and (max-width: 800px) {
   .form-box {
       padding: 40px;
-      background-color:rgba(239,239,239);
       width: 80%;
       margin-left: 0;
+      background-color: white;
+   
 
   }
 }
 
 @media screen and (max-width: 600px) {
   .form-box {
-      padding: 40px;
-      background-color:rgba(239,239,239);
       width: 100%;
       margin-left: 0;
+      background-color: white;
+      border-color: linear-gradient(#25a9e0, #1b75bb,#2e3191, #7f3f97);
+      border-image: linear-gradient(0.25turn, #25a9e0, #1b75bb,#2e3191, #7f3f97) 60;
+      border-style: solid;
+      border-width: 5px;  background-repeat: no-repeat;
   }
 }
 
 .form-background {
-  background-image: url('https://cdn.shopify.com/s/files/1/1665/4771/files/mobile_makeup_and_hair.jpg');
-  background-repeat: no-repeat;
+  background-image: url('https://s3-ap-southeast-2.amazonaws.com/flayr-bucket-storage/beauty-product-flatlay_925x+(1).jpg');
   background-size: 100%;
   padding: 80px;
 }
@@ -548,7 +559,7 @@ FLAYR CUSTOM START
 @media screen and (max-width: 600px) {
   .form-background {
       background-image: none;
-      padding: 0px;
+      padding: 10px;
      
   }
 }

@@ -6,6 +6,7 @@ import '../styles/custom.css';
 import 'react-dates/initialize';
 import '../styles/react-dates-override.css';
 import fetch from 'isomorphic-unfetch';
+import ErrorPage from 'next/error';
 
 
 export default class extends Component {
@@ -43,7 +44,23 @@ export default class extends Component {
       finalSuburb = finalSuburb.replace('-', ' ');
     }
 
-    return { state: query.state, country: query.country, suburb: this.toTitleCase(finalSuburb), stylists: stylistArray.splice(0,10)}
+    let validSuburb = false;
+    const suburb = await fetch(`https://express-server-ap-southeast-2.flayr.io/suburbs?state=${query.state.toLowerCase()}&suburb=${finalSuburb.toLowerCase()}`)
+    let  suburbData;
+    if(suburb.status === 200){
+      validSuburb = true;
+      suburbData = await suburb.json();
+    }
+
+
+    let meta_title;
+    let meta_desc;
+    if(suburbData){
+      meta_title = suburbData[0].title;
+      meta_desc = suburbData[0].desc;
+    }
+   
+    return {meta_desc: meta_desc, meta_title: meta_title, validSuburb: validSuburb, state: query.state, country: query.country, suburb: this.toTitleCase(finalSuburb), stylists: stylistArray.splice(0,10)}
   }
 
    static toTitleCase = (str) => {
@@ -56,9 +73,16 @@ export default class extends Component {
     return (
       <div>
         <Head>
-        <title>Makeup Artists & Hair Stylists In {this.props.suburb}</title>
+        <title>{this.props.meta_title}</title>
+        <meta name="description" content={this.props.meta_desc}></meta>   
         </Head>
-        <SuburbLandingPage suburb={this.props.suburb} state={this.props.state} stylists={this.props.stylists}/>
+        {this.props.validSuburb &&
+          <SuburbLandingPage suburb={this.props.suburb} state={this.props.state} stylists={this.props.stylists}/>
+        }
+        {!this.props.validSuburb &&
+          <ErrorPage statusCode={404}/>
+
+        }
       </div>
     )
   }

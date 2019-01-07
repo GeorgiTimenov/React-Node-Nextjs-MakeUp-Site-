@@ -1,6 +1,6 @@
 import React from 'react'; 
 import NavBar from '../NavBar/NavBar';
-import QuoteForm from '../QuoteForm/QuoteForm';
+import SuburbQuoteForm from '../SuburbQuoteForm/SuburbQuoteForm';
 import ShopifyBar from '../ShopifyBar/ShopifyBar';
 import Loading from '../Loading/Loading';
 import Footer from '../Footer/Footer';
@@ -19,15 +19,15 @@ import axios from 'axios';
 class SuburbLandingPage extends React.Component{
     constructor(props){
         super(props);
-
-
         this.state = {
             state: this.props.state,
             suburb: this.props.suburb,
             formHidden: false,
             isLoaded:false,
             viewPricingClicked: false,
-            loadedStylist: false
+            loadedStylist: false,
+            viewPricingClicked: true
+
         }
     }
     onFormHideHandler = () => {
@@ -101,10 +101,10 @@ class SuburbLandingPage extends React.Component{
             {!this.state.formHidden &&
                  <div className="form-background">
                  <div className="form-box">
-                 <h3 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">Book Pro Makeup Artists &amp; hair stylists in {this.state.suburb}</h3>
+                 <h1 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h4">Book Pro Makeup Artists &amp; hair stylists in {this.state.suburb}</h1>
  
                   {this.state.viewPricingClicked &&
-                     <QuoteForm 
+                     <SuburbQuoteForm 
                         isSuburbQuote={true} 
                         suburb={this.state.suburb} 
                         state={this.state.state} 
@@ -122,7 +122,8 @@ class SuburbLandingPage extends React.Component{
                 </div>
             }
             {this.props.stylists.length > 0 &&
-          <div className="Product__Aside " style={{marginBotton: '-100px'}}>
+            <div className="product__margin" style={{marginTop: '-40px'}}>
+          <div className="Product__Aside" >
           <div className="Product__Tabs">
 
 
@@ -161,13 +162,15 @@ class SuburbLandingPage extends React.Component{
                 </div>
                 </div>
                 </div>
+                </div>
           }
             <ReviewsBox style={{marginTop: '-110px'}}/>
             <NeedHelpBar />
             <JoinBarSmall />
             <Footer />
             
-        </div>)
+        </div>
+        )
     }
 }
 
