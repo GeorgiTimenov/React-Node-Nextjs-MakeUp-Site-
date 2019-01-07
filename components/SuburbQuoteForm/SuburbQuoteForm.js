@@ -41,7 +41,7 @@ class QuoteForm extends React.Component{
         this.eventAddress = React.createRef();
         this.state = {
             isSuburbQuote: false,
-            page1fields: ['autofill','state','postcode','suburb','eventDate','time','event_desc'],
+            page1fields: ['eventDate','time'],
             page2fields: ['numOfPeople'],
             page3fields: ['firstName','email','mobile'],
             width: 0,
@@ -320,6 +320,28 @@ class QuoteForm extends React.Component{
            
          });
     }
+
+
+    //external form handler
+    extFormHandler = (e) => {
+      this.clearAllErrors();
+      e.preventDefault();
+      window.scrollTo(0, 0);
+      let fields;
+      if(this.state.page === 1){
+          fields = this.state.page1fields;
+      }else if(this.state.page === 2){
+          fields = this.state.page2fields;
+
+      }
+      
+      //if fields are valid
+      if(!this.fieldsAreValid(fields)){
+         window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.props.suburb}&state=${this.props.state}&postcode=${this.props.postcode}`
+      }
+     
+      
+  }
 
     nextClickHandler = (e) => {
         this.clearAllErrors();
@@ -661,9 +683,9 @@ class QuoteForm extends React.Component{
                                     placeholder="date"
                                     readOnly
                                     />
+                              <span className="error-span">{this.state.errors.eventDate ? this.state.errors.eventDateMsg: ""}</span>
 
                             </Wrapper>
-                            <span className="error-span">{this.state.errors.eventDate ? this.state.errors.eventDateMsg: ""}</span>
 
                              
 
@@ -675,11 +697,12 @@ class QuoteForm extends React.Component{
                     <select name="time" 
                     id="quoteTime" 
                     aria-label="start time" 
-                    className={!this.state.errors.time ? "Form__Input" : "Form__Input form-field-error"}
+                    className={"Form__Input"}
                      value={this.state.time} 
                      type="select" 
-                     onBlur={(e) => this.validateInput(e)}
-                     onChange={(e) => this.onSelectChange(e)} required
+                     onChange={(e) => {
+                       this.onSelectChange(e)
+                      }} 
                      style={{  height: '50px'
                      }}
                     >
@@ -738,7 +761,7 @@ class QuoteForm extends React.Component{
 
                     {/* <button className="button-form Button Button--primary"  style={{zIndex: '0'}} 
                     onClick={this.nextClickHandler}>Next</button> */}
-                    <button className="button-form Button Button--primary"  style={{zIndex: '0'}} 
+                    <button className="button-form Button Button--primary"  style={{zIndex: '0', width: '200px', height: '50px'}} 
                     onClick={this.extFormHandler}>Next</button>
             </div>
         )

@@ -106,8 +106,9 @@ class SuburbLandingPage extends React.Component{
                   {this.state.viewPricingClicked &&
                      <SuburbQuoteForm 
                         isSuburbQuote={true} 
-                        suburb={this.state.suburb} 
-                        state={this.state.state} 
+                        suburb={this.props.suburb} 
+                        state={this.props.state} 
+                        postcode={this.props.postcode}
                         submitRoute="/quote/"
                         loadedQuote={this.onLoadedHandler} 
                         hideForm={this.onFormHideHandler}

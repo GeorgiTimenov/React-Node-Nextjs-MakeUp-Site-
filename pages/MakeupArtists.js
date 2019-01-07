@@ -60,7 +60,7 @@ export default class extends Component {
       meta_desc = suburbData[0].desc;
     }
    
-    return {meta_desc: meta_desc, meta_title: meta_title, validSuburb: validSuburb, state: query.state, country: query.country, suburb: this.toTitleCase(finalSuburb), stylists: stylistArray.splice(0,10)}
+    return {meta_desc: meta_desc, meta_title: meta_title, validSuburb: validSuburb, state: query.state, country: query.country, suburb: this.toTitleCase(finalSuburb), stylists: stylistArray.splice(0,10), postcode: postcode}
   }
 
    static toTitleCase = (str) => {
@@ -77,7 +77,7 @@ export default class extends Component {
         <meta name="description" content={this.props.meta_desc}></meta>   
         </Head>
         {this.props.validSuburb &&
-          <SuburbLandingPage suburb={this.props.suburb} state={this.props.state} stylists={this.props.stylists}/>
+          <SuburbLandingPage suburb={this.props.suburb} state={this.props.state} postcode={this.props.postcode} stylists={this.props.stylists}/>
         }
         {!this.props.validSuburb &&
           <ErrorPage statusCode={404}/>
