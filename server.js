@@ -32,16 +32,16 @@ app.prepare()
     return app.render(req, res, `/au`)
   }) 
 
-  server.get('/:country/:state/:suburb/', (req, res) => {
-    return app.render(req, res, '/MakeupArtists', { country: req.params.country, state: req.params.state, suburb: req.params.suburb })
+  server.get('/au/:state/:suburb/', (req, res) => {
+    return app.render(req, res, '/MakeupArtists', { country: 'au', state: req.params.state, suburb: req.params.suburb })
   }) 
 
-  server.get('/:country/:state/:suburb/MakeupArtists', (req, res) => {
-    return app.render(req, res, '/MakeupArtists', { country: req.params.country, state: req.params.state, suburb: req.params.suburb })
+  server.get('/au/:state/:suburb/MakeupArtists', (req, res) => {
+    return app.render(req, res, '/MakeupArtists', { country: 'au', state: req.params.state, suburb: req.params.suburb })
   })
 
-  server.get('/:country/:state/:suburb/MakeupArtist', (req, res) => {
-    return app.render(req, res, '/MakeupArtists', { country: req.params.country, state: req.params.state, suburb: req.params.suburb })
+  server.get('/au/:state/:suburb/MakeupArtist', (req, res) => {
+    return app.render(req, res, '/MakeupArtists', { country: 'au', state: req.params.state, suburb: req.params.suburb })
   }) 
 
   server.get('/stylist-quote/:provider_id/:quote_id', (req, res) => {

@@ -18,12 +18,9 @@ const ReviewsBox = (props) => {
            <span class="spr-badge-caption">3000+ reviews</span>
             <a href="https://au.flayr.io/pages/reviews-of-flayr" className="Link Link--underline footer-link" style={{fontSize: '60%'}}>read reviews</a>
             </h2>
-
             </div>
 
         </div>
-        
-
     )
 }
 
