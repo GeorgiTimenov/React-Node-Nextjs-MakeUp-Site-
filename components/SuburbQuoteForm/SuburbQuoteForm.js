@@ -232,16 +232,66 @@ class QuoteForm extends React.Component{
       
       const address = addressObject.address_components;
 
-      axios.get('https://express-server-ap-southeast-2.flayr.io/place-details?address='+addressObject.formatted_address)
-      .then(res=>{
+      let postcode;
+      let state;
+      let suburb;      
+      for(let a of address){
+        if(a.types.includes("postal_code")){
+            postcode = a.short_name;
+        }
+        if(a.types.includes("administrative_area_level_1")){
+          state = a.short_name;
+        }
+        if(a.types.includes("locality")){
+          suburb = a.short_name
+        } 
+      }
+
+    
+
+      if(!postcode || !state || !suburb){
+        axios.get('https://express-server-ap-southeast-2.flayr.io/place-details?address='+addressObject.formatted_address)
+        .then(res=>{
+          console.log(addressObject.formatted_address);
+          console.log(res.data);
+          if(res.data.suburb){
+            suburb = res.data.suburb;
+          }
+          if(res.data.postcode){
+            postcode = res.data.postcode;
+          }
+          if(res.data.state){
+            state = res.data.state;
+          }
+
+          this.setState({
+            autofill: addressObject.formatted_address,
+            suburb: suburb,
+            state: state,
+            postcode: postcode
+          }) 
+          console.log(postcode);
+         console.log(state);
+         console.log(suburb);
+
+          
+        })
+      }else{
         this.setState({
           autofill: addressObject.formatted_address,
-          suburb: res.data.suburb,
-          state: res.data.state,
-          postcode: res.data.postcode
-        })
+          suburb: suburb,
+          state: state,
+          postcode: postcode
+        }) 
+        console.log(postcode);
+        console.log(state);
+        console.log(suburb);
 
-      })
+      }
+
+      
+      
+     
     }
 
 
@@ -314,9 +364,9 @@ class QuoteForm extends React.Component{
       //if fields are valid
       if(!this.fieldsAreValid(fields)){
         if(this.props.isSuburbQuote){
-          window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.props.suburb.toLowerCase()}&state=${this.props.state.toUpperCase()}&postcode=${this.props.postcode}`
+          window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.props.suburb}&state=${this.props.state}&postcode=${this.props.postcode}`
         }else{
-          window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.state.suburb.toLowerCase()}&state=${this.state.state.toUpperCase()}&postcode=${this.state.postcode}`
+          window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.state.suburb}&state=${this.state.state}&postcode=${this.state.postcode}`
         }
       }
      
@@ -343,8 +393,6 @@ class QuoteForm extends React.Component{
                 })
             }
         }
-       
-        
     }
 
     handleKeyPress = (e) => {
