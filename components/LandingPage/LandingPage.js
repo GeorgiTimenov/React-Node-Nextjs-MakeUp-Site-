@@ -1,9 +1,8 @@
 import React from 'react'; 
 import NavBar from '../NavBar/NavBar';
-import QuoteForm from '../QuoteForm/QuoteForm';
+import SuburbQuoteForm from '../SuburbQuoteForm/SuburbQuoteForm';
 import ShopifyBar from '../ShopifyBar/ShopifyBar';
 import Loading from '../Loading/Loading';
-import './LandingPage.css';
 import Footer from '../Footer/Footer';
 import ReviewBox from '../ReviewBox/ReviewBox';
 import ReviewsBox from '../ReviewsBox/ReviewsBox';
@@ -65,9 +64,9 @@ class LandingPage extends React.Component{
             {!this.state.formHidden &&
                  <div className="form-background">
                  <div className="form-box">
-                 <h3 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">Book Pro Makeup Artists &amp; hair stylists</h3>
+                 <h1 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h4">Book Pro Makeup Artists &amp; hair stylists</h1>
  
-                     <QuoteForm submitRoute="/quote/" loadedQuote={this.onLoadedHandler} hideForm={this.onFormHideHandler}/>
+                     <SuburbQuoteForm submitRoute="/quote/" loadedQuote={this.onLoadedHandler} hideForm={this.onFormHideHandler}/>
                  </div>
                 </div>
             }

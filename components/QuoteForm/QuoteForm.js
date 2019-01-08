@@ -1,5 +1,4 @@
 import React from 'react'; 
-import './QuoteForm.css';
 import axios from 'axios';
 import Script from 'react-load-script';
 import Geocode from "react-geocode";

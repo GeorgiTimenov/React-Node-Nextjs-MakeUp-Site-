@@ -1,5 +1,4 @@
 import React from 'react'; 
-import './ReviewsBox.css';
 
 const ReviewsBox = (props) => {
     return(

@@ -11,7 +11,6 @@ import NeedHelpBar from '../NeedHelpBar/NeedHelpBar';
 import GetStartedBar from '../GetStartedBar/GetStartedBar';
 import JoinBarSmall from '../JoinBarSmall/JoinBarSmall';
 import StylistProfile from '../StylistProfile/StylistProfile';
-import '../StylistList/StylistList.css'
 import axios from 'axios';
 
 

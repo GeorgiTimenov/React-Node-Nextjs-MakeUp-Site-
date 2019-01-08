@@ -89,7 +89,7 @@ class QuoteForm extends React.Component{
             hasErrors: false, 
             errors: {
                 autofill: false,
-                autofillMsg: 'please enter the event location',
+                autofillMsg: 'enter the event location',
                 state: false,
                 stateMsg: 'select your state',
                 firstName: false,
@@ -179,9 +179,12 @@ class QuoteForm extends React.Component{
     }
 
     onSelectChange = (e) => {
+      let errs = this.state.errors;
+      errs.time = false;
         e.target.querySelector('#placeholder-select').disabled = true;
         this.setState({
-            [e.target.name] : e.target.value
+            [e.target.name] : e.target.value,
+            errors: errs
         })
     }
 
@@ -274,12 +277,15 @@ class QuoteForm extends React.Component{
 
 
     onDateChange = (date) =>{
+        let errs = this.state.errors;
+        errs.eventDate = false;
         let s = date;
         let formattedDate = date.format("YYYY-MM-DD");
        
         this.setState({
             eventDate: formattedDate,
-            date:date
+            date:date,
+            errors:errs
         })
 
     }
@@ -330,11 +336,11 @@ class QuoteForm extends React.Component{
       let fields;
       if(this.state.page === 1){
           fields = this.state.page1fields;
-      }else if(this.state.page === 2){
-          fields = this.state.page2fields;
-
       }
       
+      if(!this.props.isSuburbQuote){
+        fields.push('autofill')
+      }
       //if fields are valid
       if(!this.fieldsAreValid(fields)){
          window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.props.suburb}&state=${this.props.state}&postcode=${this.props.postcode}`
@@ -530,8 +536,6 @@ class QuoteForm extends React.Component{
     //pass in fields
     fieldsAreValid = (fields) => {
         let errorsObj = this.state.errors
-
-        
         for(let f of fields){
             if(!this.passedRegex(f,this.state[f])){
                 errorsObj[f] = true;
@@ -663,7 +667,26 @@ class QuoteForm extends React.Component{
             <div>
                 <Script url="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvDA0hOnuN-KijkcT9IFYapOH9042QSso&libraries=places"          
                 onLoad={this.handleScriptLoad}
-                />   
+                />  
+                {!this.props.isSuburbQuote &&
+                <span>
+                   <span class="ProductItem__Title Heading" style={{marginBottom: '10px'}}>Event Location</span>
+                   <div className="Form__Item" >
+                         <input className={"Form__Input" } aria-label="EventAddress" onChange={(e) => this.onFieldChange(e)} 
+                                 value={this.state.autofill}
+                                 type="text" 
+                                 name="autofill" 
+                                 id="quoteAutofill"
+                                 placeholder="location" required="true"
+                                 ref={this.eventAddress}
+                                 style={{  height: '50px'
+                                   }}
+                                 required/>
+                         <span className="error-span">{this.state.errors.autofill ? this.state.errors.autofillMsg: ""}</span>
+                     </div> 
+                     </span> 
+                } 
+               
                 <span class="ProductItem__Title Heading" style={{marginBottom: '10px'}}>Event Date</span>
                         <div className="Form__Item" >
                             
@@ -701,7 +724,7 @@ class QuoteForm extends React.Component{
                      value={this.state.time} 
                      type="select" 
                      onChange={(e) => {
-                       this.onSelectChange(e)
+                       this.onSelectChange(e);
                       }} 
                      style={{  height: '50px'
                      }}

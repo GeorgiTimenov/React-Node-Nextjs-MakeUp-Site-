@@ -30,7 +30,7 @@
 .SingleDatePickerInput {
   font-size: 8px;
   display: inline-block;
-  background-color: #EFEFEF
+  background-color: white
 }
 .SingleDatePickerInput__withBorder {
   border-radius: 2px;

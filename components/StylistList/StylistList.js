@@ -3,7 +3,6 @@ import axios from 'axios';
 import Loading from '../Loading/Loading';
 import ShopifyBar from '../ShopifyBar/ShopifyBar';
 import NavBar from '../NavBar/NavBar';
-import './StylistList.css';
 import {Collapse} from 'reactstrap';import Footer from '../Footer/Footer';
 import StylistProfile from '../StylistProfile/StylistProfile';
 import StarRatings from 'react-star-ratings';

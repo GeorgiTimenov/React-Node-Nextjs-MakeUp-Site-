@@ -605,9 +605,15 @@ FLAYR CUSTOM START
 }
 
 .pac-container {
-  background-color:#EFEFEF;
+  background-color:white;
 }
 
+.pac-container:after {
+  /* Disclaimer: not needed to show 'powered by Google' if also a Google Map is shown */
+
+  background-image: none !important;
+  height: 0px;
+}
 
 .pac-item{
   padding: 5px;

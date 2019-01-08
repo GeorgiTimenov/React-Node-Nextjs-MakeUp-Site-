@@ -1,6 +1,5 @@
 import React from 'react';
 import Slider from "react-slick";
-import './ReviewBox.css';
 
 const ReviewBox = () =>{
     var settings = {
