@@ -232,7 +232,21 @@ class StylistList extends React.Component {
               quote: quote.data
 
             })
-            stylistArray.sort(this.compare);
+           // stylistArray.sort(this.compare);
+             stylistArray.sort((x, y) => {
+                var n =   x.cost - y.cost;
+                if (n !== 0) {
+                    return n;
+                }else{
+                  if(x.numOfReviews > y.numOfReviews){
+                    return -1
+                  }else if (x.numOfReviews < y.numOfReviews){
+                    return 1
+                  }else{
+                    return 0
+                  }
+                }
+            });
             //if its a stylist direct quote and is found, redirect them to shopify
             if(this.state.isStylistQuote){
               let uniqueStylistArray = []
