@@ -247,31 +247,17 @@ class QuoteForm extends React.Component{
       let addressObject = this.autocomplete.getPlace();
       
       const address = addressObject.address_components;
-      let postCode = ''; 
-      let state = '';
-      let suburb = '';
-      
-      for(let x of address){
-          if(x.types.includes("locality")){
-              suburb =  x.short_name
-          }
-          if(x.types.includes("administrative_area_level_1")){
-              state = x.short_name
-          }
-          if(x.types.includes("postal_code")){
-              postCode =  x.short_name
-          }
-      }
-      this.setState({
-          autofill: addressObject.formatted_address,
-          suburb: suburb,
-          state: state,
-          postcode: postCode
-      }, () => {
-          this.fieldsAreValid(['state','suburb','postcode']);
-      })
 
-    
+      axios.get('https://express-server-ap-southeast-2.flayr.io/place-details?address='+addressObject.formatted_address)
+      .then(res=>{
+        this.setState({
+          autofill: addressObject.formatted_address,
+          suburb: res.data.suburb,
+          state: res.data.state,
+          postcode: res.data.postcode
+        })
+
+      })
     }
 
 
@@ -343,7 +329,11 @@ class QuoteForm extends React.Component{
       }
       //if fields are valid
       if(!this.fieldsAreValid(fields)){
-         window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.props.suburb}&state=${this.props.state}&postcode=${this.props.postcode}`
+        if(this.props.isSuburbQuote){
+          window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.props.suburb}&state=${this.props.state}&postcode=${this.props.postcode}`
+        }else{
+          window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.state.suburb}&state=${this.state.state}&postcode=${this.state.postcode}`
+        }
       }
      
       
