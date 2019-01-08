@@ -28,7 +28,7 @@
   background: #00a699
 }
 .SingleDatePickerInput {
-  font-size: 8px;
+  font-size: 16px;
   display: inline-block;
   background-color: white
 }
@@ -603,7 +603,7 @@
   overflow-y: scroll
 }
 .DateInput {
-  font-size: 8px;
+  font-size: 16px;
   margin: 0;
   padding: 0;
   background:white;
@@ -624,9 +624,9 @@
 }
 .DateInput_input {
   font-family: inherit;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
-  color: #6A6A6A;
+  color: black;
   font-weight: 500;
   background-color:white;
   width: 100%;
@@ -640,8 +640,11 @@
   border-left: 0;
   border-radius: 0
 }
+input::placeholder {
+  color:  #6A6A6A
+}
 .DateInput_input__small {
-  font-size: 8px;
+  font-size: 16px;
   line-height: 18px;
   letter-spacing: .2px;
   padding: 7px 7px 5px

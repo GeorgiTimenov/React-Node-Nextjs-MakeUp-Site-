@@ -797,3 +797,10 @@ margin-left: 10px;
 .label-background{
   background-color: white
 }
+
+input{
+  font-size: 16px;
+}
+select{
+  font-size: 16px;
+}
