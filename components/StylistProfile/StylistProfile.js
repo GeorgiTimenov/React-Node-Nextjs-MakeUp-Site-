@@ -2,6 +2,7 @@ import React from 'react';
 import StarRatings from 'react-star-ratings';
 import queryString from 'query-string';
 import axios from 'axios';
+import LazyLoad from 'react-lazy-load';
 
 class StylistProfile extends React.Component {
 
@@ -107,8 +108,9 @@ return(
                   <CustomTag  href={link} class="ProductItem__ImageWrapper ">
                         <div class="Grid__Cell Grid__Cell--12 1/3--phone 1/3--tablet-and-up offer-item">
                         <div class="offer-feature-image offer-feature-image-nomargin">
-
+                        <LazyLoad offset={0}>
                               <img class="big-profile-pic ProductItem__Image Image--fadeIn Image--lazyLoaded" src={`${this.props.bigImage}`} className="big-profile-pic ProductItem__Image Image--fadeIn Image--lazyLoaded" alt="#bridal"></img>
+                          </LazyLoad>
                               <span class="Image__Loader"></span>
                       {!this.props.forLandingPage &&
                               <div class="ProductItem__Info ProductItem__Info--center offer-image-stylist-overlay">
@@ -122,10 +124,15 @@ return(
                               <div class="Grid Grid__Cell--TopPad5">
                               {/* <span class="Viewprofile__arrow"><i class="material-icons">chevron_right</i></span> */}
                                     <div class="Grid__Cell 1/4--phone hidden-tablet-and-up hidden-lap-and-up offer-stylist-photo">
+                                    <LazyLoad offset={0}>
+
                                           <img src={`${this.props.smallImage}`} className="small-profile-pic"></img>
+                                          </LazyLoad>
                                     </div>
                                     <div class="Grid__Cell hidden-phone 1/4--tablet-and-up  offer-stylist-photo">
+                                    <LazyLoad offset={0}>
                                           <img src={`${this.props.smallImage}`} className="small-profile-pic-fixedheight"></img>
+                                    </LazyLoad>
                                     </div>
                                     <div class="Grid__Cell 3/4--phone 3/4--tablet-and-up offer-stylist-details">
                                           <span class="ProductItem__Title Heading">{this.props.firstName}</span>
