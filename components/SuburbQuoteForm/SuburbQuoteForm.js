@@ -15,23 +15,7 @@ import MomentLocaleUtils, {
 Geocode.setApiKey("AIzaSyBvDA0hOnuN-KijkcT9IFYapOH9042QSso");
 
 const Wrapper = styled.div`
-  .SingleDatePickerInput {
-    background-color: #EFEFEF
-
-  }
-  .DateInput_input{
-    font-size: 13px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #EFEFEF
-  }
-  .DateInput_input_1{
-    font-size: 13px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #EFEFEF;
-    
-  }
+  
 `;
 
 
