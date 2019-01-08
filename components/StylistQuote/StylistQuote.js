@@ -5,7 +5,6 @@ import ShopifyBar from '../ShopifyBar/ShopifyBar';
 import Loading from '../Loading/Loading';
 import Footer from '../Footer/Footer';
 import axios from 'axios';
-import './StylistQuote.css';
 import StarRatings from 'react-star-ratings';
 class StylistQuote extends React.Component {
 

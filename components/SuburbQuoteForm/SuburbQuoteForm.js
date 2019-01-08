@@ -330,9 +330,9 @@ class QuoteForm extends React.Component{
       //if fields are valid
       if(!this.fieldsAreValid(fields)){
         if(this.props.isSuburbQuote){
-          window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.props.suburb}&state=${this.props.state}&postcode=${this.props.postcode}`
+          window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.props.suburb.toLowerCase()}&state=${this.props.state.toUpperCase()}&postcode=${this.props.postcode}`
         }else{
-          window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.state.suburb}&state=${this.state.state}&postcode=${this.state.postcode}`
+          window.location.href = `https://flayr-quote-suburb.paperform.co/?eventdate=${this.state.eventDate}&time=${this.state.time}&suburb=${this.state.suburb.toLowerCase()}&state=${this.state.state.toUpperCase()}&postcode=${this.state.postcode}`
         }
       }
      

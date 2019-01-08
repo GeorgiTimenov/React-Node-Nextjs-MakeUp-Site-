@@ -15,23 +15,7 @@ import MomentLocaleUtils, {
 Geocode.setApiKey("AIzaSyBvDA0hOnuN-KijkcT9IFYapOH9042QSso");
 
 const Wrapper = styled.div`
-  .SingleDatePickerInput {
-    background-color: #EFEFEF
-
-  }
-  .DateInput_input{
-    font-size: 13px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #EFEFEF
-  }
-  .DateInput_input_1{
-    font-size: 13px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #EFEFEF;
-    
-  }
+ 
 `;
 
 
@@ -599,7 +583,7 @@ class QuoteForm extends React.Component{
                             </p>
                         </div>
                         <span className="error-span">{this.state.errors[`${name}`] ? this.state.errors.personMsg: ""}</span>
-                        <label className="Form__FloatingLabel" for={for_}>person {i}</label>
+                        <label className="Form__FloatingLabel"  style={{backgroundColor: 'white'}}for={for_}>person {i}</label>
                     </div>
              
 
@@ -620,7 +604,7 @@ class QuoteForm extends React.Component{
                    <span className="error-span">{this.state.errors[`${name}service`] ? this.state.errors.personServiceMsg: ""}</span>
 
                    
-                   <label className="Form__FloatingLabel" for={id+"service"}>person {i} service</label>   
+                   <label className="Form__FloatingLabel"  style={{backgroundColor: 'white'}}for={id+"service"}>person {i} service</label>   
                </div>
 
                 </div>
@@ -654,7 +638,7 @@ class QuoteForm extends React.Component{
                                onBlur={(e) => this.validateInput(e)}
                                required/>
                         <span className="error-span">{this.state.errors.autofill ? this.state.errors.autofillMsg: ""}</span>
-                        <label className="Form__FloatingLabel" for="quoteAutofill">where should the stylist come to</label>
+                        <label className="Form__FloatingLabel"  style={{backgroundColor: 'white'}}for="quoteAutofill">where should the stylist come to</label>
                     </div>  
                 </div>
                 <div className="Form__Group">
@@ -680,7 +664,7 @@ class QuoteForm extends React.Component{
 
                         </select>
                         <span className="error-span">{this.state.errors.state ? this.state.errors.stateMsg: ""}</span>
-                        <label className="Form__FloatingLabel" for="quoteState">state</label>
+                        <label className="Form__FloatingLabel" style={{backgroundColor: 'white'}} for="quoteState">state</label>
 
                     </div>
                          
@@ -697,7 +681,7 @@ class QuoteForm extends React.Component{
                         />
                         <span className="error-span">{this.state.errors.postcode ? this.state.errors.postcodeMsg: ""}</span>
 
-                        <label className="Form__FloatingLabel" for="quoteState">postcode</label>
+                        <label className="Form__FloatingLabel"  style={{backgroundColor: 'white'}}for="quoteState" >postcode</label>
                     </div>
 
                     
@@ -715,7 +699,7 @@ class QuoteForm extends React.Component{
                                required/>
                             <span className="error-span">{this.state.errors.suburb ? this.state.errors.suburbMsg: ""}</span>
 
-                        <label className="Form__FloatingLabel" for="quoteState">suburb</label>
+                        <label className="Form__FloatingLabel"  style={{backgroundColor: 'white'}}for="quoteState">suburb</label>
                     </div>  
             </div>
                
@@ -809,7 +793,7 @@ class QuoteForm extends React.Component{
                     </select>
                     <span className="error-span">{this.state.errors.time ? this.state.errors.timeMsg: ""}</span>
 
-                    <label className="Form__FloatingLabel">time to be ready by</label>
+                    <label className="Form__FloatingLabel" style={{backgroundColor: 'white'}}>time to be ready by</label>
                 </div>
                     </div> 
                     <div className="Form__Item" onKeyPress={(e) => this.handleKeyPress(e)}>
@@ -824,7 +808,7 @@ class QuoteForm extends React.Component{
                                required/>
                         <span className="error-span">{this.state.errors.event_desc ? this.state.errors.event_descMsg: ""}</span>
 
-                        <label className="Form__FloatingLabel" for="quoteDesc">describe the event</label>
+                        <label className="Form__FloatingLabel"  style={{backgroundColor: 'white'}}for="quoteDesc">describe the event</label>
                     </div>  
                     <button className="button-form Button Button--primary"  style={{zIndex: '0'}} onClick={this.nextClickHandler}>Next</button>
             </div>
@@ -858,7 +842,7 @@ class QuoteForm extends React.Component{
                     </select>    
                     <span className="error-span">{this.state.errors.numOfPeople ? this.state.errors.numOfPeopleMsg: ""}</span>
                 
-                    <label className="Form__FloatingLabel" for="quoteNumOfPeople">number of people</label>
+                    <label className="Form__FloatingLabel"  style={{backgroundColor: 'white'}}for="quoteNumOfPeople">number of people</label>
                            
                     </div>
                     {formOptions.map((option) =>
@@ -889,7 +873,7 @@ class QuoteForm extends React.Component{
                                placeholder="first name" />
                         <span className="error-span">{this.state.errors.firstName ? this.state.errors.firstNameMsg: ""}</span>
 
-                        <label className="Form__FloatingLabel" >first name</label>
+                        <label className="Form__FloatingLabel"  style={{backgroundColor: 'white'}}>first name</label>
 
                             
                     </div>
@@ -909,7 +893,7 @@ class QuoteForm extends React.Component{
                                required/>
                         <span className="error-span">{this.state.errors.email? this.state.errors.emailMsg: ""}</span>
 
-                        <label className="Form__FloatingLabel" for="quoteEmail">email</label>
+                        <label className="Form__FloatingLabel"  style={{backgroundColor: 'white'}}for="quoteEmail">email</label>
 
                     </div>
                 </div>
@@ -926,7 +910,7 @@ class QuoteForm extends React.Component{
                                placeholder="mobile number" />
                         <span className="error-span">{this.state.errors.mobile ? this.state.errors.mobileMsg: ""}</span>
 
-                        <label className="Form__FloatingLabel" for="quoteMobile">mobile number</label>
+                        <label className="Form__FloatingLabel"  style={{backgroundColor: 'white'}}for="quoteMobile">mobile number</label>
 
                     </div>       
                 </div>
