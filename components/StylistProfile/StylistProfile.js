@@ -108,7 +108,7 @@ return(
                   <CustomTag  href={link} class="ProductItem__ImageWrapper ">
                         <div class="Grid__Cell Grid__Cell--12 1/3--phone 1/3--tablet-and-up offer-item">
                         <div class="offer-feature-image offer-feature-image-nomargin">
-                        <LazyLoad offset={0}>
+                        <LazyLoad offset={140}>
                               <img class="big-profile-pic ProductItem__Image Image--fadeIn Image--lazyLoaded" src={`${this.props.bigImage}`} className="big-profile-pic ProductItem__Image Image--fadeIn Image--lazyLoaded" alt="#bridal"></img>
                           </LazyLoad>
                               <span class="Image__Loader"></span>
@@ -124,13 +124,13 @@ return(
                               <div class="Grid Grid__Cell--TopPad5">
                               {/* <span class="Viewprofile__arrow"><i class="material-icons">chevron_right</i></span> */}
                                     <div class="Grid__Cell 1/4--phone hidden-tablet-and-up hidden-lap-and-up offer-stylist-photo">
-                                    <LazyLoad offset={0}>
+                                    <LazyLoad offset={140}>
 
                                           <img src={`${this.props.smallImage}`} className="small-profile-pic"></img>
                                           </LazyLoad>
                                     </div>
                                     <div class="Grid__Cell hidden-phone 1/4--tablet-and-up  offer-stylist-photo">
-                                    <LazyLoad offset={0}>
+                                    <LazyLoad offset={140}>
                                           <img src={`${this.props.smallImage}`} className="small-profile-pic-fixedheight"></img>
                                     </LazyLoad>
                                     </div>
