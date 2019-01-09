@@ -107,8 +107,9 @@ export default class extends Component {
             </script>
         }
         </Head>
+
         {this.props.validSuburb &&
-          <SuburbLandingPage suburb={this.props.suburb} state={this.props.state} postcode={this.props.postcode} stylists={this.props.stylists}/>
+          <SuburbLandingPage suburbLevel={this.props.suburbLevel} urlSuburb={urlSuburb} suburb={this.props.suburb} state={this.props.state} postcode={this.props.postcode} stylists={this.props.stylists}/>
         }
         {!this.props.validSuburb &&
           <ErrorPage statusCode={404}/>

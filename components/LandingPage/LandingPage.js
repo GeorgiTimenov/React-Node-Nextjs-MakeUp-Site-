@@ -4,13 +4,13 @@ import SuburbQuoteForm from '../SuburbQuoteForm/SuburbQuoteForm';
 import ShopifyBar from '../ShopifyBar/ShopifyBar';
 import Loading from '../Loading/Loading';
 import Footer from '../Footer/Footer';
-import ReviewBox from '../ReviewBox/ReviewBox';
 import ReviewsBox from '../ReviewsBox/ReviewsBox';
 import InstaFeed from '../InstaFeed/InstaFeed';
 import NeedHelpBar from '../NeedHelpBar/NeedHelpBar';
 import GetStartedBar from '../GetStartedBar/GetStartedBar';
 import JoinBar from '../JoinBar/JoinBar';
 import 'react-dates/lib/css/_datepicker.css';
+import Link from 'next/link'
 
 class LandingPage extends React.Component{
 
@@ -60,6 +60,20 @@ class LandingPage extends React.Component{
             {this.state.formHidden &&
                     messageBox
             }
+
+              {this.props.state &&
+             <div class="breadcrumbs">
+            
+            <Link href="/au">
+            <a>Australia </a> 
+            </Link>
+
+            <Link href={`/au/${this.props.state}`}><a> &gt; {this.props.state} </a></Link>  
+
+           
+            </div>
+             }    
+
 
             {!this.state.formHidden &&
                  <div className="form-background">

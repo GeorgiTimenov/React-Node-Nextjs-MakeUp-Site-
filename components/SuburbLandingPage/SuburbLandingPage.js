@@ -4,14 +4,12 @@ import SuburbQuoteForm from '../SuburbQuoteForm/SuburbQuoteForm';
 import ShopifyBar from '../ShopifyBar/ShopifyBar';
 import Loading from '../Loading/Loading';
 import Footer from '../Footer/Footer';
-import ReviewBox from '../ReviewBox/ReviewBox';
 import ReviewsBox from '../ReviewsBox/ReviewsBox';
-import InstaFeed from '../InstaFeed/InstaFeed';
 import NeedHelpBar from '../NeedHelpBar/NeedHelpBar';
-import GetStartedBar from '../GetStartedBar/GetStartedBar';
 import JoinBarSmall from '../JoinBarSmall/JoinBarSmall';
 import StylistProfile from '../StylistProfile/StylistProfile';
-import axios from 'axios';
+import Link from 'next/link'
+
 class SuburbLandingPage extends React.Component{
     constructor(props){
         super(props);
@@ -92,6 +90,22 @@ class SuburbLandingPage extends React.Component{
             {this.state.formHidden &&
                     messageBox
             }
+            <div class="breadcrumbs">
+            <Link href="/au">
+            <a>Australia </a> 
+            </Link>
+            &gt;
+            <Link href={`/au/${this.props.state}`}><a> {this.props.state.toUpperCase()} </a></Link>
+             &gt; 
+             <Link href={`/au/${this.props.state}/${this.props.urlSuburb}`}>
+             <a> {this.props.suburb} </a>
+             </Link>
+             {!this.props.suburbLevel &&
+               <span>&gt; 
+                Makeup Artists</span> 
+             }
+            
+            </div>
 
             {!this.state.formHidden &&
                  <div className="form-background">
@@ -117,9 +131,12 @@ class SuburbLandingPage extends React.Component{
                  </div>
                 </div>
             }
+
             {this.props.stylists.length > 0 &&
             <div className="product__margin" style={{marginTop: '-40px'}}>
+
           <div className="Product__Aside" >
+
           <div className="Product__Tabs">
 
 

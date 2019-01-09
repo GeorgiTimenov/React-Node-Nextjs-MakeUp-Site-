@@ -804,3 +804,23 @@ input{
 select{
   font-size: 16px;
 }
+@media screen and (max-width: 600px) {
+.breadcrumbs {
+  font-size: 0.8em;
+  /* margin: 20px 11px; */
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-bottom: 0;
+  /* color: darkgray; */
+  background-color: #EFEFEF;
+}
+}
+@media screen and (min-width: 600px) {
+  .breadcrumbs {
+    font-size: 0.8em;
+    /* margin: 20px 11px; */
+    padding: 5px;
+    /* color: darkgray; */
+    background-color: white;
+  }
+}

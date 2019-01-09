@@ -37,7 +37,7 @@ onFormHideHandler = () => {
 
   render() {
     return(<div>
-   <LandingPage />
+   <LandingPage state={this.props.state}/>
     </div>)
   }
 }

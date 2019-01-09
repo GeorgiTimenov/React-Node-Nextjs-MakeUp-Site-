@@ -42,7 +42,7 @@ export default class extends Component {
             </script>
         </Head>
         {this.props.state !== null &&
-          <Index />
+          <Index state={this.props.state.toUpperCase()}/>
         }
           {this.props.state === null &&
            <ErrorPage statusCode={404}/>
