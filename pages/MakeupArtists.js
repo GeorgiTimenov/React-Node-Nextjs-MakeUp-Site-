@@ -69,7 +69,17 @@ export default class extends Component {
     });
   }
 
+  toTitleCase = (str) => {
+    return str.replace(/\w\S*/g, function(txt){
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
   render () {
+
+    let urlSuburb = this.props.suburb.toLowerCase();
+    if(urlSuburb.split(' ')){
+      urlSuburb = urlSuburb.replace(' ', '-');
+    }
     return (
       <div>
         <Head>
@@ -78,8 +88,8 @@ export default class extends Component {
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[
           {"@type":"ListItem","position":1,"name":"Australia","item":"https://flayr.io/au"},
           {"@type":"ListItem","position":2,"name":"New South Wales","item":"https://flayr.io/au/nsw"},
-          {"@type":"ListItem","position":3,"name":"Glebe","item":"https://flayr.io/au/nsw/glebe"},
-          {"@type":"ListItem","position":4,"name":"Makeup Artists","item":"https://flayr.io/au/nsw/glebe/makeupartists"}]}`}}>
+          {"@type":"ListItem","position":3,"name":"${this.toTitleCase(this.props.suburb.toLowerCase())}","item":"https://flayr.io/au/nsw/${urlSuburb}"},
+          {"@type":"ListItem","position":4,"name":"Makeup Artists","item":"https://flayr.io/au/nsw/${urlSuburb}/makeupartists"}]}`}}>
           </script>
         </Head>
         {this.props.validSuburb &&
