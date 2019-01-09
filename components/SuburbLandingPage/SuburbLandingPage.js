@@ -143,10 +143,10 @@ class SuburbLandingPage extends React.Component{
               <div id="offers" className="Container_Offers stylist-page-navbar-space">
 
               {(this.props.stylists.length === 5 || this.props.stylists.length === 3 ||  this.props.stylists.length === 10) &&
-                <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">top {this.props.stylists.length} makeup artists in {this.props.suburb}</h2>
+                <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h4">top {this.props.stylists.length} makeup artists in {this.props.suburb}</h2>
           }
           {!(this.props.stylists.length === 5 || this.props.stylists.length === 3 ||  this.props.stylists.length === 10) &&
-                <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1">top makeup artists in {this.props.suburb}</h2>
+                <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h4">top makeup artists in {this.props.suburb}</h2>
           }
             <div className="CollectionMain CollectionMain_Offers" >
               <div className="CollectionInner">
