@@ -479,7 +479,7 @@ FLAYR CUSTOM START
   background-color: black;
 }
 .form-box {
-  padding: 40px;
+  padding: 30px;
   width: 30%;
   margin-left: 10%;
   background-color: white;
@@ -496,7 +496,7 @@ FLAYR CUSTOM START
 
 @media screen and (max-width: 2500px) {
   .form-box {
-      padding: 40px;
+      padding: 30px;
       width: 35%;
       margin-left: 7%;
       background-color: white;
@@ -506,7 +506,7 @@ FLAYR CUSTOM START
 
 @media screen and (max-width: 1400px) {
   .form-box {
-      padding: 40px;
+      padding: 30px;
       width: 60%;
       margin-left: 0;
       background-color: white;
@@ -518,7 +518,7 @@ FLAYR CUSTOM START
 
 @media screen and (max-width: 1020px) {
   .form-box {
-      padding: 40px;
+      padding: 30px;
       width: 90%;
       margin-left: 0;
       background-color: white;
@@ -529,7 +529,7 @@ FLAYR CUSTOM START
 
 @media screen and (max-width: 800px) {
   .form-box {
-      padding: 40px;
+      padding: 30px;
       width: 80%;
       margin-left: 0;
       background-color: white;

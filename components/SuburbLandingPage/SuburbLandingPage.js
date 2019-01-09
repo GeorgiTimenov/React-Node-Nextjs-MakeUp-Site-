@@ -92,7 +92,6 @@ class SuburbLandingPage extends React.Component{
 
             <ShopifyBar />
             <NavBar />
-
             {this.state.formHidden &&
                     messageBox
             }
