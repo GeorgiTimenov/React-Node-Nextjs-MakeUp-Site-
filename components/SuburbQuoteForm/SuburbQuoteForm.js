@@ -806,7 +806,9 @@ class QuoteForm extends React.Component{
 
                     {/* <button className="button-form Button Button--primary"  style={{zIndex: '0'}} 
                     onClick={this.nextClickHandler}>Next</button> */}
-                    <button className="button-form Button Button--primary"  style={{zIndex: '0', width: '200px', height: '50px'}} 
+                    <button className="button-form Button Button--primary Button--full hidden-tablet-and-up"  style={{zIndex: '0', height: '50px'}} 
+                    onClick={this.extFormHandler}>Next</button>
+                    <button className="button-form Button Button--primary hidden-phone"  style={{zIndex: '0', width: 200, height: '50px'}} 
                     onClick={this.extFormHandler}>Next</button>
             </div>
         )

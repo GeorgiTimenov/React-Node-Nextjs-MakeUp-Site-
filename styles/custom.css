@@ -560,7 +560,7 @@ FLAYR CUSTOM START
   .form-background {
       background-image: none;
       padding: 10px;
-     
+      margin-bottom: -100px;
   }
 }
 
