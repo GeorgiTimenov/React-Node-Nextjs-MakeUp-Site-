@@ -12,9 +12,6 @@ import GetStartedBar from '../GetStartedBar/GetStartedBar';
 import JoinBarSmall from '../JoinBarSmall/JoinBarSmall';
 import StylistProfile from '../StylistProfile/StylistProfile';
 import axios from 'axios';
-
-
-
 class SuburbLandingPage extends React.Component{
     constructor(props){
         super(props);
