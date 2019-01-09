@@ -109,7 +109,7 @@ if(this.props.cover_review){
     "author":
       {"@type":"Person","name":"${this.props.cover_review.customer}"},"reviewBody":"${this.props.cover_review.body}"}
     }
-  }
+  
   `
 }
 return(
@@ -152,7 +152,7 @@ return(
         "ratingValue": ${this.props.reviewScore},
         "reviewCount":${this.props.numOfReviews} },
         ${cover_review ? cover_review : ''}
-      
+      }
     `}}>     
     </script>
 
