@@ -1,9 +1,8 @@
 import React from 'react'; 
 import StarRatings from 'react-star-ratings';
-import queryString from 'query-string';
 import axios from 'axios';
 import LazyLoad from 'react-lazy-load';
-
+import Head from 'next/head';
 class StylistProfile extends React.Component {
 
   constructor(props){
@@ -102,6 +101,54 @@ if(this.state.requests_past_day !== 0){
 
 return(
 <div className={offerCardClass} style={{marginRight: -100}}>
+<Head>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `
+    {
+      "@context": "http://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "${this.props.firstName}",
+      "image": "${this.props.smallImage}",
+      "@id": "https://flayr.io/profile/${this.props.provider_id}",
+      "url": "https://flayr.io/profile/${this.props.provider_id}",
+      "telephone": "+61466986744",
+      "priceRange": "$",
+      "description": "${this.props.profile_blurb}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "${this.props.suburb}",
+        "addressRegion": "${this.props.state}",
+        "postalCode": "${this.props.postcode}",
+        "addressCountry": "AU"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "aggregateRating":{
+        "@type":"AggregateRating",
+        "ratingValue": ${this.props.reviewScore},
+        "reviewCount":${this.props.numOfReviews} },
+      "review":{
+    "@type":"Review",
+    "author":
+      {"@type":"Person","name":"Kelsey B."},"reviewBody":"Chantelle provided wedding makeup for me, 5 bridesmaids, and my mother. She did an amazing job making everyone look absolutely gorgeous and yet still natural and like themselves. My makeup stayed beautiful all night long -- after 12 hours, when I got home at the end of the night, it still looked incredible! She's also great fun to be around: chatty, funny, sweet, and just a beacon of light. She's exactly the kind of person you want around on your wedding day (or any day) to help you laugh and stay calm. I would hire her again in a heartbeat, have already recommended her to one friend, and will continue to recommend her to anyone in need of a makeup artist!"}
+    }
+    }
+    `}}>     
+    </script>
+    </Head> 
+
       <div className="ProductItem">
             <div className="ProductItem__Wrapper ">
                   <div className="Grid" data-mobile-count={2} data-desktop-count={4}>

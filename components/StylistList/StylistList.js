@@ -206,7 +206,10 @@ class StylistList extends React.Component {
                 numOfReviews: s.stylistData.stylist.num_of_reviews,
                 provider_id: s.stylistData.stylist.provider_id,
                 unavailable_dates: s.stylistData.stylist.unavailable_dates,
-                requests_past_day: s.stylistData.stylist.requests_past_day
+                requests_past_day: s.stylistData.stylist.requests_past_day,
+                suburb: s.stylistData.stylist.suburb,
+                postcode: s.stylistData.stylist.postcode,
+                state: s.stylistData.stylist.state
               })
             }
 
@@ -445,6 +448,9 @@ class StylistList extends React.Component {
                      requests_past_day={s.requests_past_day}
                      defaultCost={this.state.defaultCost}
                      provider_id={s.provider_id}
+                     state={s.state}
+                     suburb={s.suburb}
+                     postcode={s.postcode}
                      />
                 )
             }
@@ -471,6 +477,9 @@ class StylistList extends React.Component {
                   defaultCost={this.state.defaultCost}
                   requests_past_day={s.requests_past_day}
                   provider_id={s.provider_id}
+                  state={s.state}
+                  suburb={s.suburb}
+                  postcode={s.postcode}
                   />)
               }else{
                 //all other ones
@@ -493,6 +502,9 @@ class StylistList extends React.Component {
                        event_time={this.state.quote.event_time}
                        defaultCost={this.state.defaultCost}
                        provider_id={s.provider_id}
+                       state={s.state}
+                       suburb={s.suburb}
+                       postcode={s.postcode}
                        />
                 )
               }
