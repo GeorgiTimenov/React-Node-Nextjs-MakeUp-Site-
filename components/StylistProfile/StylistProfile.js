@@ -15,7 +15,6 @@ class StylistProfile extends React.Component {
   componentDidMount(){
     axios.get('https://express-server-ap-southeast-2.flayr.io/stylist-requests/'+this.props.provider_id)
     .then(num=>{
-      console.log(num.data.num_of_requests);
       this.setState({
         requests_past_day:  num.data.num_of_requests
       })
@@ -97,8 +96,22 @@ if(this.state.requests_past_day !== 0){
  
 }
 
+let schemaDesc = undefined;
+if(this.props.profile_blurb){
+  schemaDesc = `"description": "${this.props.profile_blurb}",`
+}
 
-
+let cover_review = undefined;
+if(this.props.cover_review){
+  cover_review = `
+  "review":{
+    "@type":"Review",
+    "author":
+      {"@type":"Person","name":"${this.props.cover_review.customer}"},"reviewBody":"${this.props.cover_review.body}"}
+    }
+  }
+  `
+}
 return(
 <div className={offerCardClass} style={{marginRight: -100}}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `
@@ -111,7 +124,7 @@ return(
       "url": "https://flayr.io/profile/${this.props.provider_id}",
       "telephone": "+61466986744",
       "priceRange": "$",
-      "description": "${this.props.profile_blurb}",
+      ${schemaDesc ? schemaDesc : ''}
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "",
@@ -138,12 +151,8 @@ return(
         "@type":"AggregateRating",
         "ratingValue": ${this.props.reviewScore},
         "reviewCount":${this.props.numOfReviews} },
-      "review":{
-    "@type":"Review",
-    "author":
-      {"@type":"Person","name":"Kelsey B."},"reviewBody":"Chantelle provided wedding makeup for me, 5 bridesmaids, and my mother. She did an amazing job making everyone look absolutely gorgeous and yet still natural and like themselves. My makeup stayed beautiful all night long -- after 12 hours, when I got home at the end of the night, it still looked incredible! She's also great fun to be around: chatty, funny, sweet, and just a beacon of light. She's exactly the kind of person you want around on your wedding day (or any day) to help you laugh and stay calm. I would hire her again in a heartbeat, have already recommended her to one friend, and will continue to recommend her to anyone in need of a makeup artist!"}
-    }
-    }
+        ${cover_review ? cover_review : ''}
+      
     `}}>     
     </script>
 

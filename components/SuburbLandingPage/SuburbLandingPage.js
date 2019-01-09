@@ -168,6 +168,7 @@ class SuburbLandingPage extends React.Component{
                                     suburb={this.props.suburb} 
                                     state={this.props.state} 
                                     postcode={this.props.postcode}
+                                    cover_review={s.cover_review}
                                     />
                                     </div>
                                 })}
