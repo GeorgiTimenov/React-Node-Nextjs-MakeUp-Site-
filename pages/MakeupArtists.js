@@ -37,7 +37,6 @@ export default class extends Component {
 
     let stylistArray = data3.body;
     stylistArray.sort(compare);
-    console.log(stylistArray[0].num_of_reviews)
 
     let finalSuburb = query.suburb;
     if(finalSuburb.split('-')){
@@ -55,12 +54,17 @@ export default class extends Component {
 
     let meta_title;
     let meta_desc;
+    let state_long;
     if(suburbData){
       meta_title = suburbData[0].title;
       meta_desc = suburbData[0].desc;
+      state_long = suburbData[0].state_long;
     }
    
-    return {meta_desc: meta_desc, meta_title: meta_title, validSuburb: validSuburb, state: query.state, country: query.country, suburb: this.toTitleCase(finalSuburb), stylists: stylistArray.splice(0,10), postcode: postcode}
+    return {meta_desc: meta_desc, meta_title: meta_title, validSuburb: validSuburb, 
+      state: query.state, country: query.country, 
+      suburb: this.toTitleCase(finalSuburb), stylists: stylistArray.splice(0,10), 
+      postcode: postcode, state_long: state_long, suburbLevel: query.suburbLevel}
   }
 
    static toTitleCase = (str) => {
@@ -74,6 +78,7 @@ export default class extends Component {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
   }
+
   render () {
 
     let urlSuburb = this.props.suburb.toLowerCase();
@@ -84,13 +89,23 @@ export default class extends Component {
       <div>
         <Head>
         <title>{this.props.meta_title}</title>
-        <meta name="description" content={this.props.meta_desc}></meta>  
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Australia","item":"https://flayr.io/au"},
-          {"@type":"ListItem","position":2,"name":"New South Wales","item":"https://flayr.io/au/nsw"},
-          {"@type":"ListItem","position":3,"name":"${this.toTitleCase(this.props.suburb.toLowerCase())}","item":"https://flayr.io/au/nsw/${urlSuburb}"},
-          {"@type":"ListItem","position":4,"name":"Makeup Artists","item":"https://flayr.io/au/nsw/${urlSuburb}/makeupartists"}]}`}}>
-          </script>
+        <meta name="description" content={this.props.meta_desc}></meta> 
+        {this.props.suburbLevel &&
+          <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[
+            {"@type":"ListItem","position":1,"name":"Australia","item":"https://flayr.io/au"},
+            {"@type":"ListItem","position":2,"name":"${this.props.state_long}","item":"https://flayr.io/au/${this.props.state.toLowerCase()}"},
+            {"@type":"ListItem","position":3,"name":"${this.toTitleCase(this.props.suburb.toLowerCase())}","item":"https://flayr.io/au/${this.props.state.toLowerCase()}/${urlSuburb}"},
+          `}}>
+            </script>
+        } 
+        {!this.props.suburbLevel &&
+          <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[
+            {"@type":"ListItem","position":1,"name":"Australia","item":"https://flayr.io/au"},
+            {"@type":"ListItem","position":2,"name":"${this.props.state_long}","item":"https://flayr.io/au/${this.props.state.toLowerCase()}"},
+            {"@type":"ListItem","position":3,"name":"${this.toTitleCase(this.props.suburb.toLowerCase())}","item":"https://flayr.io/au/${this.props.state.toLowerCase()}/${urlSuburb}"},
+            {"@type":"ListItem","position":4,"name":"Makeup Artists","item":"https://flayr.io/au/${this.props.state.toLowerCase()}/${urlSuburb}/makeupartists"}]}`}}>
+            </script>
+        }
         </Head>
         {this.props.validSuburb &&
           <SuburbLandingPage suburb={this.props.suburb} state={this.props.state} postcode={this.props.postcode} stylists={this.props.stylists}/>

@@ -33,7 +33,7 @@ app.prepare()
   }) 
 
   server.get('/au/:state/:suburb/', (req, res) => {
-    return app.render(req, res, '/MakeupArtists', { country: 'au', state: req.params.state, suburb: req.params.suburb })
+    return app.render(req, res, '/MakeupArtists', { country: 'au', state: req.params.state, suburb: req.params.suburb, suburbLevel: true})
   }) 
 
   server.get('/au/:state/:suburb/MakeupArtists', (req, res) => {
