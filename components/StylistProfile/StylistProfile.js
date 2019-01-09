@@ -104,7 +104,7 @@ if(this.props.profile_blurb){
 let cover_review = undefined;
 if(this.props.cover_review){
   cover_review = `
-  "review":{
+  ,"review":{
     "@type":"Review",
     "author":
       {"@type":"Person","name":"${this.props.cover_review.customer}"},"reviewBody":"${this.props.cover_review.body}"}
@@ -150,7 +150,9 @@ return(
       "aggregateRating":{
         "@type":"AggregateRating",
         "ratingValue": ${this.props.reviewScore},
-        "reviewCount":${this.props.numOfReviews} },
+        "reviewCount":${this.props.numOfReviews} 
+      }
+
         ${cover_review ? cover_review : ''}
       }
     `}}>     
