@@ -164,6 +164,7 @@ class SuburbLandingPage extends React.Component{
                                     forLandingPage={true}
                                     profile_blurb={s.profile_blurb}
                                     onViewPricingClick={this.viewPricingHanlder}
+                                    provider_id={s.provider_id}
                                     suburb={this.props.suburb} 
                                     state={this.props.state} 
                                     postcode={this.props.postcode}

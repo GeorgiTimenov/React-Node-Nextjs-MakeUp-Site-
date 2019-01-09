@@ -101,7 +101,6 @@ if(this.state.requests_past_day !== 0){
 
 return(
 <div className={offerCardClass} style={{marginRight: -100}}>
-<Head>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `
     {
       "@context": "http://schema.org",
@@ -147,7 +146,6 @@ return(
     }
     `}}>     
     </script>
-    </Head> 
 
       <div className="ProductItem">
             <div className="ProductItem__Wrapper ">
