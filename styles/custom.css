@@ -563,7 +563,13 @@ FLAYR CUSTOM START
       margin-bottom: -100px;
   }
 }
+@media screen and (max-width: 600px) {
 
+  .widget{
+    margin-top: 100px;
+  }
+
+}
 
 .button-form{
   margin-right: 20px;
