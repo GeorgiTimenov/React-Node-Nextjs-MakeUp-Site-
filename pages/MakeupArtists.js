@@ -49,11 +49,6 @@ export default class extends Component {
       }
     }
 
-    for(let s of stylistArray){
-      console.log(s.first_name);
-    }
-
-
     let finalStylistArray = matchPostcode.concat(stylistArray);
 
     let finalSuburb = query.suburb;
