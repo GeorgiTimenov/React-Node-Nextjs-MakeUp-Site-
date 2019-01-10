@@ -11,7 +11,6 @@ import ErrorPage from 'next/error';
 
 export default class extends Component {
    static async getInitialProps ({query}) {
-     
     const latRes = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query.suburb},${query.state},Australia&key=AIzaSyC5FYbQBRtJPiygtIbE7Z5_XEySg5ujwoM`)
     const data1 = await latRes.json()
     let latLng = data1.results[0].geometry.location;
@@ -24,6 +23,8 @@ export default class extends Component {
           postcode = a.short_name;
       }
     }
+
+    
     let compare = (a,b) => {
       if (a.num_of_reviews < b.num_of_reviews)
         return 1;
@@ -32,11 +33,28 @@ export default class extends Component {
       return 0;
     }
 
+    
     const stylists = await fetch('https://express-server-ap-southeast-2.flayr.io/p/stylists/'+postcode);
     const data3 = await stylists.json();
 
     let stylistArray = data3.body;
     stylistArray.sort(compare);
+
+    let matchPostcode = [];
+
+    for(let i = stylistArray.length -1; i >=0; i--){
+      if(postcode === stylistArray[i].postcode){
+        matchPostcode.push(stylistArray[i]);
+        stylistArray.splice(i,1);
+      }
+    }
+
+    for(let s of stylistArray){
+      console.log(s.first_name);
+    }
+
+
+    let finalStylistArray = matchPostcode.concat(stylistArray);
 
     let finalSuburb = query.suburb;
     if(finalSuburb.split('-')){
@@ -63,7 +81,7 @@ export default class extends Component {
    
     return {meta_desc: meta_desc, meta_title: meta_title, validSuburb: validSuburb, 
       state: query.state, country: query.country, 
-      suburb: this.toTitleCase(finalSuburb), stylists: stylistArray.splice(0,10), 
+      suburb: this.toTitleCase(finalSuburb), stylists: finalStylistArray.splice(0,10), 
       postcode: postcode, state_long: state_long, suburbLevel: query.suburbLevel}
   }
 

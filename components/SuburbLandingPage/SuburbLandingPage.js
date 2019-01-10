@@ -138,8 +138,6 @@ class SuburbLandingPage extends React.Component{
           <div className="Product__Aside" >
 
           <div className="Product__Tabs">
-
-
               <div id="offers" className="Container_Offers stylist-page-navbar-space">
 
               {(this.props.stylists.length === 5 || this.props.stylists.length === 3 ||  this.props.stylists.length === 10) &&
