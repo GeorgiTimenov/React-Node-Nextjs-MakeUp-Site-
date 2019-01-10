@@ -83,8 +83,7 @@ export default class extends Component {
       state: query.state, country: query.country, 
       suburb: this.toTitleCase(finalSuburb), stylists: finalStylistArray.splice(0,10), 
       postcode: postcode, state_long: state_long, suburbLevel: query.suburbLevel}
-  }
-
+    }
    static toTitleCase = (str) => {
     return str.replace(/\w\S*/g, function(txt){
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
