@@ -48,6 +48,10 @@ app.prepare()
     return app.render(req, res, '/profile', { id: req.params.id })
   }) 
 
+  server.get('/offer/:id', (req, res) => {
+    return app.render(req, res, '/offer', { id: req.params.id })
+  }) 
+
   server.get('/au/:state', (req, res) => {
     return app.render(req, res, `/au/state`, {state: req.params.state, country: 'au'})
   }) 
