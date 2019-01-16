@@ -22,6 +22,22 @@ class StylistProfile extends React.Component {
       console.log(err);
     })
   }
+
+
+  profileClick = (tag,link) =>{
+    if(tag.toString() === "a"){
+
+      axios.post('https://express-server-ap-southeast-2.flayr.io/profile-click', {
+        provider_id: this.props.provider_id,
+        quote_id: this.props.shopify_id
+      }).then(res=>{
+        console.log(res);
+      }).catch(err=>{
+        console.log(err)
+      })
+    
+    }
+  }
   render(){
 
 // Edit this to feed in actual default pricing
@@ -111,6 +127,8 @@ if(this.props.cover_review){
   
   `
 }
+
+
 return(
 <div className={offerCardClass} style={{marginRight: -100}}>
     <script type="application/ld+json" dangerouslySetInnerHTML={{__html: `
@@ -160,7 +178,7 @@ return(
       <div className="ProductItem">
             <div className="ProductItem__Wrapper ">
                   <div className="Grid" data-mobile-count={2} data-desktop-count={4}>
-                  <CustomTag  href={link} class="ProductItem__ImageWrapper ">
+                  <CustomTag href={link} onClick={()=>{this.profileClick(CustomTag)}} class="ProductItem__ImageWrapper ">
                         <div class="Grid__Cell Grid__Cell--12 1/3--phone 1/3--tablet-and-up offer-item">
                         <div class="offer-feature-image offer-feature-image-nomargin">
                               <img class="big-profile-pic ProductItem__Image Image--fadeIn Image--lazyLoaded" src={`${this.props.bigImage}`} className="big-profile-pic ProductItem__Image Image--fadeIn Image--lazyLoaded" alt="#bridal"></img>
