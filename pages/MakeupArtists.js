@@ -139,6 +139,39 @@ export default class extends Component {
             {"@type":"ListItem","position":4,"name":"Makeup Artists","item":"https://flayr.io/au/${this.props.state.toLowerCase()}/${urlSuburb}/makeupartists"}]}`}}>
             </script>
         }
+
+          <script type="application/ld+json" dangerouslySetInnerHTML={{__html: 
+            `
+            {
+              "@context": "http://schema.org",
+              "@type": "Service",
+              "name": "makeup artists",
+              "provider": {
+                "@type": "ProfessionalService",
+                "name": "FLAYR",
+                "image": "https://cdn.shopify.com/s/files/1/1665/4771/files/favicon_flayr_mobile_makeupartists_and_hair_stylists_32x32.png?v=1536803770",
+                "address": "Glebe",
+                "priceRange": "$-$$"
+              },
+              "areaServed": {
+                "@type": "State",
+                "name": "${this.props.state.toUpperCase()}, Australia"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "bestRating":  "5",
+                "worstRating": "0",
+                "reviewCount": 505,
+                "ratingCount": 505
+              }
+            }
+            
+          `}}>
+            </script>
+        
+
+
         </Head>
 
         {this.props.validSuburb &&
