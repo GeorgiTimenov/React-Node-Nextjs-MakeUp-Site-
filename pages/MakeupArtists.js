@@ -139,7 +139,7 @@ export default class extends Component {
             {"@type":"ListItem","position":4,"name":"Makeup Artists","item":"https://flayr.io/au/${this.props.state.toLowerCase()}/${urlSuburb}/makeupartists"}]}`}}>
             </script>
         }
-
+        
           <script type="application/ld+json" dangerouslySetInnerHTML={{__html: 
             `
             {
