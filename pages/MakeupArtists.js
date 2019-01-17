@@ -24,7 +24,6 @@ export default class extends Component {
       }
     }
 
-    
     let compare = (a,b) => {
       if (a.num_of_reviews < b.num_of_reviews)
         return 1;
@@ -52,10 +51,10 @@ export default class extends Component {
     let finalStylistArray = matchPostcode.concat(stylistArray);
 
     let finalSuburb = query.suburb;
-    if(finalSuburb.split('-')){
-      finalSuburb = finalSuburb.replace('-', ' ');
-    }
+    
+    finalSuburb = finalSuburb.replace(/-/g,' ').toLowerCase();
 
+    console.log(finalSuburb);
     let validSuburb = false;
     const suburb = await fetch(`https://express-server-ap-southeast-2.flayr.io/suburbs?state=${query.state.toLowerCase()}&suburb=${finalSuburb.toLowerCase()}`)
     let  suburbData;
@@ -94,9 +93,7 @@ export default class extends Component {
   render () {
 
     let urlSuburb = this.props.suburb.toLowerCase();
-    if(urlSuburb.split(' ')){
-      urlSuburb = urlSuburb.replace(' ', '-');
-    }
+    urlSuburb = urlSuburb.replace(/\s+/g, '-').toLowerCase();
     return (
       <div>
         <Head>

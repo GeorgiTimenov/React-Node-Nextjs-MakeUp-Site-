@@ -247,8 +247,6 @@ class QuoteForm extends React.Component{
         } 
       }
 
-    
-
       if(!postcode || !state || !suburb){
         axios.get('https://express-server-ap-southeast-2.flayr.io/place-details?address='+addressObject.formatted_address)
         .then(res=>{
@@ -692,7 +690,7 @@ class QuoteForm extends React.Component{
                 />  
                 {!this.props.isSuburbQuote &&
                 <span>
-                   <span class="ProductItem__Title Heading" style={{marginBottom: '10px'}}>Event Location</span>
+                   <span class="ProductItem__Title Heading" style={{marginBottom: '10px'}}>Location</span>
                    <div className="Form__Item" >
                          <input className={"Form__Input" } aria-label="EventAddress" onChange={(e) => this.onFieldChange(e)} 
                                  value={this.state.autofill}
