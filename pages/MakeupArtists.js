@@ -40,21 +40,28 @@ export default class extends Component {
     stylistArray.sort(compare);
 
     let matchPostcode = [];
-
+    let lowestMakeup = 1000;
     for(let i = stylistArray.length -1; i >=0; i--){
+      if(stylistArray[i].nonbridal_makeup_only < lowestMakeup && stylistArray[i].nonbridal_makeup_only > 0){
+        lowestMakeup = stylistArray[i].nonbridal_makeup_only
+      }
       if(postcode === stylistArray[i].postcode){
+        
         matchPostcode.push(stylistArray[i]);
         stylistArray.splice(i,1);
       }
     }
 
-    let finalStylistArray = matchPostcode.concat(stylistArray);
+    lowestMakeup = Math.ceil(lowestMakeup / 0.78);
+    
+
+    let finalStylistArray = matchPostcode.concat(stylistArray).splice(0,10);
 
     let finalSuburb = query.suburb;
     
     finalSuburb = finalSuburb.replace(/-/g,' ').toLowerCase();
 
-    console.log(finalSuburb);
+    console.log(finalSuburb.length);
     let validSuburb = false;
     const suburb = await fetch(`https://express-server-ap-southeast-2.flayr.io/suburbs?state=${query.state.toLowerCase()}&suburb=${finalSuburb.toLowerCase()}`)
     let  suburbData;
@@ -67,17 +74,34 @@ export default class extends Component {
     let meta_title;
     let meta_desc;
     let state_long;
+
+    
+    let topNumber = ''
+
+    if(finalStylistArray.length === 10) topNumber = 10;
+    if(finalStylistArray.length === 5) topNumber = 5;
+
+
+    if(finalSuburb.length < 16){
+      meta_title = `Top ${topNumber} Makeup Artists In ${this.toTitleCase(finalSuburb)} | From $${lowestMakeup} with Free Lashes`
+    }else{
+      meta_title = `Top ${topNumber} Makeup Artists In ${this.toTitleCase(finalSuburb)} In 2019 | From $${lowestMakeup}`
+    }
+
+    meta_desc = `Find & Book Top Rated Makeup Artists & Hair Stylists in ${this.toTitleCase(finalSuburb)} 
+    from $${lowestMakeup} Inclusive of  Travel & Free Lashes! Bridal, Formals, Events, Races, Commercial and more. Enquire Now!`
     if(suburbData){
-      meta_title = suburbData[0].title;
-      meta_desc = suburbData[0].desc;
+      /* meta_title = suburbData[0].title;
+      meta_desc = suburbData[0].desc; */
       state_long = suburbData[0].state_long;
     }
    
     return {meta_desc: meta_desc, meta_title: meta_title, validSuburb: validSuburb, 
       state: query.state, country: query.country, 
-      suburb: this.toTitleCase(finalSuburb), stylists: finalStylistArray.splice(0,10), 
+      suburb: this.toTitleCase(finalSuburb), stylists: finalStylistArray, 
       postcode: postcode, state_long: state_long, suburbLevel: query.suburbLevel}
     }
+
    static toTitleCase = (str) => {
     return str.replace(/\w\S*/g, function(txt){
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
